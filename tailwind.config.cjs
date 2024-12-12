@@ -1,5 +1,8 @@
 module.exports = {
-  content: ["node_modules/preline/dist/*.js"],
+  content: [
+    "node_modules/preline/dist/*.js",
+    "./src/**/*.{html,js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       color: {
