@@ -18,7 +18,7 @@ const Navbar = () => {
     <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 mt-2.5">
       <nav className="flex justify-between items-center relative">
         <div className="flex items-center gap-1">
-          <img src={Logo} alt="Logo" className="h-14 w-14" />
+          <img src={Logo} alt="Logo" className="h-12 w-12  lg:h-14 lg:w-14" />
           <h1 className="font-poppins items-center text-lg hidden lg:flex font-semibold">
             Quick Drop
           </h1>
