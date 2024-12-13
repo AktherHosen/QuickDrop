@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <Container>
+    <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 mt-2.5">
       <nav className="flex justify-between items-center relative">
         <div className="flex items-center gap-1">
           <img src={Logo} alt="Logo" className="h-14 w-14" />
@@ -76,7 +76,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </Container>
+    </div>
   );
 };
 
