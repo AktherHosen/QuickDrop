@@ -39,16 +39,18 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <span
-            className="lg:hidden cursor-pointer transition-all duration-400"
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? (
-              <IoCloseSharp size={30} />
-            ) : (
-              <GiHamburgerMenu size={30} />
-            )}
-          </span>
+          <div className="lg:hidden  w-[40px] bg-secondary bg-opacity-20 rounded-md shadow-sm border p-1 flex items-center justify-center cursor-pointer">
+            <span
+              className=" transition-all duration-400 "
+              onClick={toggleMenu}
+            >
+              {isMenuOpen ? (
+                <IoCloseSharp className="inline text-[28px]" />
+              ) : (
+                <GiHamburgerMenu className="inline text-[28px]" />
+              )}
+            </span>
+          </div>
 
           <ul
             className={`flex flex-col text-start ps-4 rounded-md absolute top-[3.6rem] z-10 left-0 w-full bg-primary bg-opacity-20 text-black  lg:hidden 
