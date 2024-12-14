@@ -18,7 +18,6 @@ const Navbar = () => {
     <div className="border-b border-gray-200 pb-2">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 mt-2.5">
         <nav className="flex flex-col">
-          {/* Top Section */}
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-1">
               <img
@@ -67,17 +66,23 @@ const Navbar = () => {
             }`}
           >
             <ul className="mt-4 flex flex-col text-start ps-4 rounded-md w-full bg-primary bg-opacity-20 text-black lg:hidden">
-              <li className="py-2 hover:underline hover:underline-offset-4 transition-all duration-300 flex gap-1">
+              <li className="py-2 hover:underline hover:underline-offset-2 flex items-center gap-1">
                 <FaHome className="text-[14px]" />
-                <a href="#">Home</a>
+                <a href="#" className="text-[14px]">
+                  Home
+                </a>
               </li>
-              <li className="py-2 hover:underline hover:underline-offset-4 transition-all duration-300 flex gap-1">
+              <li className="py-2 hover:underline hover:underline-offset-2 flex items-center gap-1">
                 <TbLayoutDashboardFilled className="text-[14px]" />
-                <a href="#">Dashboard</a>
+                <a href="#" className="text-[14px]">
+                  Dashboard
+                </a>
               </li>
-              <li className="py-2 hover:underline hover:underline-offset-4 transition-all duration-300 flex gap-1">
+              <li className="py-2 hover:underline hover:underline-offset-2 flex items-center gap-1">
                 <IoNotificationsSharp className="text-[14px]" />
-                <a href="#">Notification</a>
+                <a href="#" className="text-[14px]">
+                  Notification
+                </a>
               </li>
             </ul>
           </div>
