@@ -14,18 +14,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Prevent scrolling when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
-    } else {
-      document.body.style.overflow = "auto"; // Re-enable scrolling
-    }
-    return () => {
-      document.body.style.overflow = "auto"; // Cleanup on unmount
-    };
-  }, [isMenuOpen]);
-
   return (
     <div className="border-b border-gray-200 pb-2">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 mt-2.5">
@@ -74,7 +62,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <div
             ref={menuRef}
-            className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+            className={`overflow-hidden transition-[max-height] duration-500 ease-in ${
               isMenuOpen ? "max-h-[200px]" : "max-h-0"
             }`}
           >

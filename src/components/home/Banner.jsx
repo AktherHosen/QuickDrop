@@ -16,6 +16,7 @@ const Banner = () => {
             to optimize logistics, reduce delays, and provide peace of mind with
             real-time updates.
           </h4>
+
           <Button title="Get Started" isPrimary={true} />
         </div>
         <div className="w-full lg:w-1/2 justify-end">
