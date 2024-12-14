@@ -14,7 +14,7 @@ module.exports = {
         secondary: "#d7d7dc",
       },
       minHeight: {
-        "calc-vh": "calc(100vh - 100px)",
+        "calc-vh": "calc(100vh - 120px)",
       },
     },
   },
