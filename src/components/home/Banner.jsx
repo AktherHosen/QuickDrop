@@ -6,23 +6,23 @@ import Button from "../common/Button";
 const Banner = () => {
   return (
     <Container>
-      <div className="min-h-calc-vh flex  justify-center md:justify-between  gap-2 flex-col md:flex-row items-center">
-        <div className="w-full lg:w-1/2 space-y-4 mt-4 lg:mt-0">
-          <h1 className="text-3xl md:text-3xl lg:text-4xl lg:max-w-md font-semibold">
+      <div className="min-h-calc-vh flex justify-center lg:justify-between  gap-2 flex-col-reverse lg:flex-row items-center w-full">
+        <div className="space-y-4 mt-4 lg:mt-0 flex flex-col max-w-lg items-center">
+          <h1 className="text-3xl md:text-3xl lg:text-4xl lg:max-w-md font-semibold text-center lg:text-start">
             Your Trusted Partner for Safe and Timely Deliveries.
           </h1>
-          <h4 className="text-[14px] lg:text-[15px]">
+          <p className="text-sm lg:text-[1rem] text-center lg:text-start">
             Experience a new standard in parcel delivery with a system designed
             to optimize logistics, reduce delays, and provide peace of mind with
             real-time updates.
-          </h4>
+          </p>
 
-          <Button title="Get Started" isPrimary={true} />
+          <Button label="Get Started" isPrimary={true} />
         </div>
-        <div className="w-full lg:w-1/2 justify-end">
+        <div className="w-full">
           <Lottie
             animationData={bannerAnimation}
-            className="w-full h-[400px]"
+            className="w-full h-[350px]"
             loop={true}
           />
         </div>
