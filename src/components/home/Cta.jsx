@@ -6,16 +6,16 @@ import Button from "../common/Button";
 const Cta = () => {
   return (
     <Container>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center transition-all duration-500 ease-in-out mt-10 lg:mt-4">
         <div className="w-full">
           <Lottie
             animationData={CTA}
-            className="w-full h-[350px] lg:mx-[-21%] xl:mx-[-25%]"
+            className="w-full h-[250px] lg:h-[350px] lg:mx-[-21%] xl:mx-[-25%]"
             loop={true}
           />
         </div>
-        <div className="space-y-3 flex flex-col justify-center items-start lg:items-start max-w-lg mx-auto">
-          <h1 className="text-3xl font-semibold text-start">
+        <div className="space-y-4 flex flex-col justify-center items-start lg:items-start max-w-lg mx-auto">
+          <h1 className="text-3xl lg:text-4xl font-semibold text-start">
             Need It Delivered Fast? <br />{" "}
             <span className="text-primary font-bold">Drop</span> It With Us!
           </h1>

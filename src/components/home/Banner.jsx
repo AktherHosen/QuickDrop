@@ -6,8 +6,8 @@ import Button from "../common/Button";
 const Banner = () => {
   return (
     <Container>
-      <div className="min-h-calc-vh flex justify-center lg:justify-between  gap-4 flex-col-reverse lg:flex-row items-center w-full">
-        <div className="space-y-3 mt-4 lg:mt-0 flex flex-col max-w-lg justify-end lg:justify-start items-end lg:items-start">
+      <div className="h-fit lg:min-h-calc-vh flex justify-center lg:justify-between  gap-4 flex-col-reverse lg:flex-row items-center w-full">
+        <div className="space-y-4 mt-4 lg:mt-0 flex flex-col max-w-lg justify-end lg:justify-start items-end lg:items-start">
           <h1 className="text-3xl md:text-3xl lg:text-4xl lg:max-w-md font-semibold text-end lg:text-start">
             Your Trusted Partner for Safe and Timely Deliveries.
           </h1>
@@ -22,7 +22,7 @@ const Banner = () => {
         <div className="w-full">
           <Lottie
             animationData={bannerAnimation}
-            className="w-full h-[350px]"
+            className="w-full  h-[300px] lg:h-[450px]"
             loop={true}
           />
         </div>
