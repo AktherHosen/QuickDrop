@@ -14,12 +14,12 @@ const Cta = () => {
             loop={true}
           />
         </div>
-        <div className=" space-y-3 flex flex-col justify-center items-center lg:items-start max-w-lg mx-auto">
-          <h1 className="text-3xl font-semibold text-center lg:text-start">
+        <div className="space-y-3 flex flex-col justify-center items-start lg:items-start max-w-lg mx-auto">
+          <h1 className="text-3xl font-semibold text-start">
             Need It Delivered Fast? <br />{" "}
             <span className="text-primary font-bold">Drop</span> It With Us!
           </h1>
-          <p className="text-sm lg:text-[1rem] text-center lg:text-start">
+          <p className="text-sm lg:text-[1rem] text-start">
             Experience seamless, reliable, and lightning-fast parcel delivery.
             Whether it's urgent documents, gifts, or packages—Quick Drop ensures
             your parcels reach their destination on time, every time.
