@@ -1,17 +1,12 @@
-import React from "react";
-
-const Button = ({ label, isPrimary, isSmall }) => {
+const Button = ({ label, isPrimary }) => {
   return (
     <button
-      className={`px-4 py-1.5 rounded-sm cursor-pointer  block
-    
-      ${
-        isPrimary
-          ? "bg-primary text-white font-normal"
-          : "bg-secondary text-black font-normal"
-      }
-      ${isSmall ? "text-sm" : "text-lg"}
-    `}
+      className={`block rounded-sm cursor-pointer font-normal 
+        px-2 py-1.5 text-[1rem] 
+        sm:px-3 sm:py-1 sm:text-base 
+        md:px-4 md:py-1.5 md:text-lg 
+        ${isPrimary ? "bg-primary text-white" : "bg-secondary text-black"}
+      `}
     >
       {label}
     </button>
