@@ -16,8 +16,8 @@ const DeliveryThings = () => {
           meals, and more!
         </h4>
       </div>
-      <div className="grid grid-cols-2  lg:grid-cols-4 gap-y-8 lg:gap-4 mt-8">
-        <div className="hover:border-b-4 transition-all duration-300 rounded-md hover:border-primary px-6 py-2  flex justify-center flex-col items-center gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-4 mt-8">
+        <div className="hover:border-b-4 transition-all duration-300 rounded-md hover:border-primary px-6 py-2 flex justify-center flex-col items-center gap-4">
           <BsFillBoxSeamFill className="text-[60px] text-primary" />
           <div className="space-y-2 text-center">
             <span className="block">Package</span>
