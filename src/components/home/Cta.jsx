@@ -6,7 +6,7 @@ import Button from "../common/Button";
 const Cta = () => {
   return (
     <Container>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center transition-all duration-500 ease-in-out my-16 lg:my-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center transition-all duration-500 ease-in-out">
         <div className="w-full">
           <Lottie
             animationData={CTA}
