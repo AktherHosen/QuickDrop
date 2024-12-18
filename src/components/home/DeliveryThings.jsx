@@ -8,7 +8,7 @@ const DeliveryThings = () => {
   return (
     <Container>
       <div className="max-w-xl space-y-3 mx-auto text-center">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
           Delivering Everything You Need
         </h1>
         <h4 className="text-xs md:text-sm">
@@ -20,7 +20,7 @@ const DeliveryThings = () => {
         <div className="min-h-[100px] border border-gray-100 shadow-sm transition-all duration-300 rounded-md border-b-[3.2px] hover:ease-linear hover:border-b-primary px-6 py-2.5 flex justify-center flex-col items-center gap-4">
           <BsFillBoxSeamFill className="text-[40px] md:text-[50px] hover:text-primary transition-colors duration-300" />
           <div className="space-y-2 text-center">
-            <span className="block">Package</span>
+            <span className="block text-sm lg:text-[1rem]">Package</span>
             <button className="bg-primary text-white px-3 py-1.5 rounded-sm text-xs">
               Book Now
             </button>
@@ -29,7 +29,7 @@ const DeliveryThings = () => {
         <div className="min-h-[100px] border border-gray-100 shadow-sm transition-all duration-300 rounded-md border-b-[3.2px] hover:ease-linear hover:border-b-primary px-6  py-2.5 flex justify-center flex-col items-center gap-4">
           <BsGiftFill className="text-[40px] md:text-[50px] hover:text-primary transition-colors duration-300" />
           <div className="space-y-2 text-center">
-            <span className="block">Gift</span>
+            <span className="block text-sm lg:text-[1rem]">Gift</span>
             <button className="bg-primary text-white px-3 py-1.5 rounded-sm text-xs">
               Book Now
             </button>
@@ -38,7 +38,7 @@ const DeliveryThings = () => {
         <div className="min-h-[100px] border border-gray-100 shadow-sm transition-all duration-300 rounded-md border-b-[3.2px] hover:ease-linear hover:border-b-primary px-6  py-2.5 flex justify-center flex-col items-center gap-4">
           <FaThList className="text-[40px] md:text-[50px] hover:text-primary transition-colors duration-300" />
           <div className="space-y-2 text-center">
-            <span className="block">Accessories</span>
+            <span className="block text-sm lg:text-[1rem]">Accessories</span>
             <button className="bg-primary text-white px-3 py-1.5 rounded-sm text-xs">
               Book Now
             </button>
@@ -47,7 +47,7 @@ const DeliveryThings = () => {
         <div className="min-h-[100px] border border-gray-100 shadow-sm transition-all duration-300 rounded-md border-b-[3.2px] hover:ease-linear hover:border-b-primary px-6  py-2.5 flex justify-center flex-col items-center gap-4">
           <HiDocumentText className="text-[40px] md:text-[50px]  hover:text-primary transition-colors duration-300" />
           <div className="space-y-2 text-center">
-            <span className="block">Document</span>
+            <span className="block text-sm lg:text-[1rem]">Document</span>
             <button className="bg-primary text-white px-3 py-1.5 rounded-sm text-xs">
               Book Now
             </button>

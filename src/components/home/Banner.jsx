@@ -8,7 +8,7 @@ const Banner = () => {
     <Container>
       <div className="h-fit lg:min-h-calc-vh flex justify-center lg:justify-between  gap-4 flex-col-reverse lg:flex-row items-center w-full -mt-10">
         <div className="space-y-4 mt-4 lg:mt-0 flex flex-col max-w-lg justify-end lg:justify-start items-end lg:items-start">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl lg:max-w-md font-semibold text-end lg:text-start">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl lg:max-w-md font-bold text-end lg:text-start">
             Your Trusted Partner for Safe and Timely Deliveries.
           </h1>
           <p className="text-sm lg:text-[1rem] text-end lg:text-start">
