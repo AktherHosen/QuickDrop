@@ -25,11 +25,13 @@ const Navbar = () => {
                 alt="Logo"
                 className="h-12 w-12 lg:h-14 lg:w-14"
               />
-              <h1 className="font-poppins text-lg hidden lg:flex font-semibold">
+              <h1 className="font-pacifico text-lg hidden lg:flex tracking-wide ">
                 Quick Drop
               </h1>
             </div>
-
+            <h1 className="font-pacifico text-xl lg:hidden  tracking-wide ">
+              Quick Drop
+            </h1>
             {/* Desktop Menu */}
             <ul className="hidden font-raleway lg:flex items-center gap-x-2 text-sm">
               <li className="py-2 hover:underline hover:underline-offset-4 transition-all duration-300">

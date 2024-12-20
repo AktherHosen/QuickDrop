@@ -16,6 +16,9 @@ module.exports = {
       minHeight: {
         "calc-vh": "calc(100vh - 120px)",
       },
+      fontFamily: {
+        pacifico: ['"Pacifico"', "serif"],
+      },
     },
   },
   plugins: [require("preline/plugin")],
