@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-start gap-4 pt-10 pb-6 border-b border-gray-100 border-opacity-30">
           <div>
             <ul className="space-y-1">
-              <li className="text-[16px] mb-2 font-bold">Company</li>
+              <li className="text-[15px] mb-2 font-bold">Company</li>
               <li className="text-secondary text-sm">
                 <a href="#">About</a>
               </li>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
           <div className="w-full flex justify-end md:justify-start">
             <ul className="space-y-1">
-              <li className="text-[16px] mb-2 font-bold">Join Us</li>
+              <li className="text-[15px] mb-2 font-bold">Join Us</li>
               <li className="text-secondary text-sm">
                 <a href="#">Driver Partner</a>
               </li>
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
           <div>
             <ul className="space-y-1">
-              <li className="text-[16px] mb-2 font-bold">
+              <li className="text-[15px] mb-2 font-bold">
                 Further Information
               </li>
               <li className="text-secondary text-sm">
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
           <div className="w-full flex justify-end md:justify-start lg:justify-end">
             <ul className="space-y-1">
-              <li className="text-[16px] mb-2 font-bold">Find Us On</li>
+              <li className="text-[15px] mb-2 font-bold">Find Us On</li>
               <div className="flex items-center gap-2">
                 <li className="text-secondary text-sm">
                   <a href="#">
