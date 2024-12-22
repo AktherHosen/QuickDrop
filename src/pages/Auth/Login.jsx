@@ -12,7 +12,7 @@ const Login = () => {
           <IoMdArrowBack className="inline text-xl " />
         </button>
       </Link>
-      <div className=" min-h-[75vh] border max-w-[500px] mx-auto ">
+      <div className=" min-h-[75vh] border rounded-md shadow-xs max-w-[500px] mx-auto ">
         <div className="p-4">
           <div className="mb-5">
             <div>
@@ -46,7 +46,7 @@ const Login = () => {
                 className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
-            <Link to="/forgot-password" className="text-[#2d42ca] text-sm">
+            <Link to="/forgot-password" className="text-[#1a32cb] text-sm">
               Forgot password?
             </Link>
             <button
@@ -69,6 +69,12 @@ const Login = () => {
               <img src={Google} alt="" className="h-6 w-6 inline" />
             </button>
           </form>
+          <h4 className="my-4 text-center text-sm">
+            Don't have an account?{" "}
+            <span className="text-[#1a32cb] hover:underline hover:underline-offset-2">
+              Register
+            </span>
+          </h4>
         </div>
       </div>
     </Container>
