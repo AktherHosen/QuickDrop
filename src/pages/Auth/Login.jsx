@@ -54,13 +54,13 @@ const Login = () => {
                   className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent block"
                 />
                 <div
-                  className="absolute right-3 top-[28%] cursor-pointer"
+                  className="absolute right-4 top-[28%] cursor-pointer"
                   onClick={togglePassword}
                 >
                   {showPassword ? (
-                    <IoMdEye className="h-6 w-6" />
+                    <IoMdEye className="text-2xl" />
                   ) : (
-                    <IoMdEyeOff className="h-6 w-6" />
+                    <IoMdEyeOff className="text-2xl" />
                   )}
                 </div>
               </div>
