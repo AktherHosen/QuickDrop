@@ -15,11 +15,11 @@ const Login = () => {
       </Link>
       <div className="border rounded-md shadow-xs max-w-[500px] mx-auto ">
         <div className="px-4">
-          <div className="mb-2">
+          <div className="my-2">
             <div className="my-1">
               <img src={Logo} alt="" className="h-[74px] w-[74px] mx-auto  " />
             </div>
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center mb-6">
               <h2 className="text-[1.2rem] font-semibold">Welcome Back</h2>
               <p className="text-gray-600 text-sm">
                 Please enter your details to login
@@ -47,12 +47,15 @@ const Login = () => {
                 className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
-            <Link to="/forgot-password" className="text-[#1a32cb] text-sm">
+            <Link
+              to="/forgot-password"
+              className="text-[#1a32cb] text-sm hover:underline hover:underline-offset-2"
+            >
               Forgot password?
             </Link>
             <button
               type="submit"
-              className="bg-black text-gray-200 rounded-md w-full py-3"
+              className="bg-black text-gray-200 rounded-md w-full py-3 h-[48px] border"
             >
               Login
             </button>
@@ -65,7 +68,7 @@ const Login = () => {
 
             <button
               type="submit"
-              className="bg-gray-100  rounded-md w-full py-3"
+              className="bg-gray-100  rounded-md w-full py-3 h-[48px] border"
             >
               <img src={Google} alt="" className="h-6 w-6 inline" />
             </button>
