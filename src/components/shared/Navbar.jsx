@@ -92,6 +92,15 @@ const Navbar = () => {
                   Notification
                 </a>
               </li>
+
+              <li className="py-2 mb-2">
+                <Link
+                  to="/login"
+                  className="text-[14px] bg-primary w-fit px-5 py-1.5 rounded-sm text-white"
+                >
+                  Login
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
