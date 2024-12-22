@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,11 +41,16 @@ const Navbar = () => {
               <li className="py-2 hover:underline hover:underline-offset-4 transition-all duration-300">
                 <a href="#">Dashboard</a>
               </li>
-              <li className="py-2 hover:underline hover:underline-offset-4 transition-all duration-300 flex items-center">
+              <li className="py-2 hover:underline hover:underline-offset-4 transition-all duration-300 flex items-center ">
                 <IoNotificationsSharp className="text-xl hover:text-[#75a3e9] transition-all duration-300" />
                 <a href="#" className="lg:hidden">
                   Notification
                 </a>
+              </li>
+              <li className="border-l-2 border-black h-4 flex items-center hover:underline hover:underline-offset-4 transition-all duration-300">
+                <Link to="/login" className="pl-2">
+                  Login
+                </Link>
               </li>
             </ul>
 
