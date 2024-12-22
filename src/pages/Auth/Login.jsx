@@ -1,10 +1,16 @@
-import React from "react";
-import Container from "../../components/common/Container";
+import React, { useState } from "react";
+import { IoMdEye } from "react-icons/io";
+import { IoMdEyeOff } from "react-icons/io";
 import { IoMdArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import Google from "../../assets/images/google.png";
+
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <section className="max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4 my-4">
       <Link
@@ -41,12 +47,25 @@ const Login = () => {
               <label htmlFor="password" className="block text-sm font-medium">
                 Password
               </label>
-              <input
-                type="password"
-                placeholder="********"
-                className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="********"
+                  className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent block"
+                />
+                <div
+                  className="absolute right-3 top-[28%] cursor-pointer"
+                  onClick={togglePassword}
+                >
+                  {showPassword ? (
+                    <IoMdEye className="h-6 w-6" />
+                  ) : (
+                    <IoMdEyeOff className="h-6 w-6" />
+                  )}
+                </div>
+              </div>
             </div>
+
             <Link
               to="/forgot-password"
               className="text-[#1a32cb] text-sm hover:underline hover:underline-offset-2"
@@ -59,13 +78,11 @@ const Login = () => {
             >
               Login
             </button>
-
             <div className="flex items-center my-2">
               <hr className="flex-grow border-t border-gray-400" />
               <span className="px-4 text-gray-500">or</span>
               <hr className="flex-grow border-t border-gray-400" />
             </div>
-
             <button
               type="submit"
               className="bg-gray-100  rounded-md w-full py-3 h-[48px] border"
