@@ -6,15 +6,16 @@ import Logo from "../../assets/images/logo.png";
 import Google from "../../assets/images/google.png";
 const Login = () => {
   return (
-    <Container>
-      <Link to="/">
-        <button className="-mt-10 mb-4 text-white font-semibold rounded-full bg-black flex items-center justify-center  p-2 ">
-          <IoMdArrowBack className="inline text-xl " />
-        </button>
+    <section className="max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4 my-4">
+      <Link
+        to="/"
+        className="my-6 text-white font-semibold rounded-full bg-black flex items-center justify-center  p-2 w-fit"
+      >
+        <IoMdArrowBack className="inline text-xl " />
       </Link>
-      <div className=" min-h-[75vh] border rounded-md shadow-xs max-w-[500px] mx-auto ">
-        <div className="p-4">
-          <div className="mb-5">
+      <div className="border rounded-md shadow-xs max-w-[500px] mx-auto ">
+        <div className="px-4">
+          <div className="mb-4">
             <div>
               <img src={Logo} alt="" className="h-14 w-14 mx-auto my-4 " />
             </div>
@@ -51,7 +52,7 @@ const Login = () => {
             </Link>
             <button
               type="submit"
-              className="bg-black text-white rounded-md w-full py-3"
+              className="bg-black text-gray-200 rounded-md w-full py-3"
             >
               Login
             </button>
@@ -77,7 +78,7 @@ const Login = () => {
           </h4>
         </div>
       </div>
-    </Container>
+    </section>
   );
 };
 
