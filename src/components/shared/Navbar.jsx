@@ -21,11 +21,7 @@ const Navbar = () => {
         <nav className="flex flex-col">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-1">
-              <img
-                src={Logo}
-                alt="Logo"
-                className="h-12 w-12 lg:h-14 lg:w-14"
-              />
+              <img src={Logo} alt="Logo" className="h-14 w-14" />
               <h1 className="font-pacifico text-lg hidden lg:flex tracking-wide ">
                 Quick Drop
               </h1>

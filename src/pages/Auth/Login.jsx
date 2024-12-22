@@ -15,9 +15,9 @@ const Login = () => {
       </Link>
       <div className="border rounded-md shadow-xs max-w-[500px] mx-auto ">
         <div className="px-4">
-          <div className="mb-4">
-            <div>
-              <img src={Logo} alt="" className="h-14 w-14 mx-auto my-4 " />
+          <div className="mb-2">
+            <div className="my-1">
+              <img src={Logo} alt="" className="h-[74px] w-[74px] mx-auto  " />
             </div>
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-[1.2rem] font-semibold">Welcome Back</h2>
