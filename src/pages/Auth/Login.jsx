@@ -15,7 +15,7 @@ const Login = () => {
     <section className="max-w-[1240px] h-screen  mx-auto px-6 sm:px-5 lg:px-4">
       <Link
         to="/"
-        className="my-6 text-white font-semibold rounded-full bg-black flex items-center justify-center  p-2 w-fit"
+        className="my-6 text-white font-semibold rounded-full bg-black flex items-center justify-center p-2 w-fit"
       >
         <IoMdArrowBack className="inline text-xl " />
       </Link>
