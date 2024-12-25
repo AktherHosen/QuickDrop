@@ -78,11 +78,11 @@ const Login = () => {
             >
               Login
             </button>
-            <div className="flex items-center my-2">
+            {/* <div className="flex items-center my-2">
               <hr className="flex-grow border-t border-gray-400" />
               <span className="px-4 text-gray-500">or</span>
               <hr className="flex-grow border-t border-gray-400" />
-            </div>
+            </div> */}
             <button
               type="submit"
               className="bg-gray-100  rounded-md w-full py-3 h-[48px] border"
