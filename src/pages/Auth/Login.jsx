@@ -19,7 +19,7 @@ const Login = () => {
       >
         <IoMdArrowBack className="inline text-xl " />
       </Link>
-      <div className="border rounded-md shadow-xs max-w-[500px] mx-auto ">
+      <div className="border rounded-md shadow-xs max-w-[450px] mx-auto ">
         <div className="px-4">
           <div className="my-2">
             <div className="my-1">
@@ -78,23 +78,27 @@ const Login = () => {
             >
               Login
             </button>
-            <div className="flex items-center my-2">
+            {/* <div className="flex items-center my-2">
               <hr className="flex-grow border-t border-gray-400" />
               <span className="px-4 text-gray-500">or</span>
               <hr className="flex-grow border-t border-gray-400" />
-            </div>
+            </div> */}
             <button
               type="submit"
               className="bg-gray-100  rounded-md w-full py-3 h-[48px] border"
             >
-              <img src={Google} alt="" className="h-6 w-6 inline" />
+              <img src={Google} alt="" className="h-6 w-6 inline" />{" "}
+              <span className="uppercase ms-2 text-sm">login via google</span>
             </button>
           </form>
           <h4 className="my-4 text-center text-sm">
             Don't have an account?{" "}
-            <span className="text-[#1a32cb] hover:underline hover:underline-offset-2">
+            <Link
+              to="/registration"
+              className="text-[#1a32cb] hover:underline hover:underline-offset-2"
+            >
               Register
-            </span>
+            </Link>
           </h4>
         </div>
       </div>

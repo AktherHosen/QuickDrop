@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import AnimatedCursor from "react-animated-cursor";
 import Login from "./pages/Auth/Login.jsx";
+import Registration from "./pages/Auth/Registration.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -38,6 +39,7 @@ createRoot(document.getElementById("root")).render(
             <Route index element={<Home />} />
           </Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
