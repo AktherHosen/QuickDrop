@@ -12,14 +12,14 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
   return (
-    <section className="max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4 my-4">
+    <section className="max-w-[1240px] h-screen flex flex-col justify-center  mx-auto px-6 sm:px-5 lg:px-4">
       <Link
         to="/"
         className="my-6 text-white font-semibold rounded-full bg-black flex items-center justify-center  p-2 w-fit"
       >
         <IoMdArrowBack className="inline text-xl " />
       </Link>
-      <div className="border rounded-md shadow-xs max-w-[450px] mx-auto ">
+      <div className="border rounded-md shadow-xs w-[450px] mx-auto ">
         <div className="px-4">
           <div className="my-2">
             <div className="my-1">
@@ -78,11 +78,11 @@ const Login = () => {
             >
               Login
             </button>
-            {/* <div className="flex items-center my-2">
+            <div className="flex items-center my-2">
               <hr className="flex-grow border-t border-gray-400" />
               <span className="px-4 text-gray-500">or</span>
               <hr className="flex-grow border-t border-gray-400" />
-            </div> */}
+            </div>
             <button
               type="submit"
               className="bg-gray-100  rounded-md w-full py-3 h-[48px] border"
