@@ -12,14 +12,14 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
   return (
-    <section className="max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4 my-4">
+    <section className="max-w-[1240px] h-[100vh] flex flex-col justify-center mx-auto px-6 sm:px-5 lg:px-4">
       <Link
         to="/"
-        className="my-6 text-white font-semibold rounded-full bg-black flex items-center justify-center  p-2 w-fit"
+        className="mb-4 text-white font-semibold rounded-full bg-black flex items-center justify-center  p-2 w-fit"
       >
         <IoMdArrowBack className="inline text-xl " />
       </Link>
-      <div className="border rounded-md shadow-xs max-w-[450px] mx-auto ">
+      <div className="border rounded-md shadow-xs min-w-[450px] mx-auto ">
         <div className="px-4">
           <div className="my-2">
             <div className="my-1">
