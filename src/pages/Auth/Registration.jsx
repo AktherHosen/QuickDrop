@@ -22,6 +22,7 @@ const Registration = () => {
     const file = event.target.files[0];
     if (file) {
       const imageURL = URL.createObjectURL(file);
+      console.log(imageURL);
       setImageLink(imageURL);
     }
   };
