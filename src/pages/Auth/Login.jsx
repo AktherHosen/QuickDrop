@@ -11,6 +11,14 @@ const Login = () => {
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const userInfo = { email, password };
+    console.log(userInfo);
+  };
   return (
     <section className="max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4">
       <Link
@@ -39,6 +47,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="hello@quickdrop.com"
                 className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
@@ -51,6 +60,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="********"
+                  name="password"
                   className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent block"
                 />
                 <div
