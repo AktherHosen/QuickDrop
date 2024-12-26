@@ -19,7 +19,7 @@ const Login = () => {
       >
         <IoMdArrowBack className="inline text-xl " />
       </Link>
-      <div className="border rounded-md shadow-xs w-[450px]  mx-auto ">
+      <div className="border rounded-md shadow-xs max-w-[450px]  mx-auto ">
         <div className="px-4">
           <div className="my-2">
             <div className="my-1">
