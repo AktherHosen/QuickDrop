@@ -89,7 +89,7 @@ const Login = () => {
               </Link>
               <button
                 type="submit"
-                className="bg-gray-800 text-gray-200 rounded-md w-full py-3 h-[48px] border"
+                className="bg-gray-800 text-gray-100 rounded-md w-full py-3 h-[48px] border"
               >
                 Login
               </button>
@@ -100,9 +100,12 @@ const Login = () => {
               </div>
               <button
                 type="submit"
-                className="bg-gray-100 rounded-md w-full py-3 h-[48px] border"
+                className="bg-trasparent rounded-md w-full py-3 h-[48px] border border-gray-800 shadow-none"
               >
                 <img src={Google} alt="" className="h-6 w-6 inline" />{" "}
+                <span className="uppercase ms-2 text-normal text-sm text-gray-800">
+                  Sign in via google
+                </span>
               </button>
             </form>
             <h4 className="my-4 text-center text-sm">
