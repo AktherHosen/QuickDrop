@@ -20,18 +20,18 @@ const Login = () => {
     console.log(userInfo);
   };
   return (
-    <section className="max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4">
-      <Link
-        to="/"
-        className="my-6 text-white font-semibold rounded-full bg-black flex items-center justify-center p-2 w-fit"
-      >
-        <IoMdArrowBack className="inline text-xl " />
-      </Link>
-      <div className="border rounded-md shadow-xs max-w-[450px]  mx-auto ">
-        <div className="px-4">
-          <div className="my-2">
+    <section className="max-w-[1240px] h-[100vh] flex justify-center items-center mx-auto px-6 sm:px-5 lg:px-4">
+      <div className="border rounded-md shadow-xs w-[450px]">
+        <div className="px-4 w-full">
+          <div className="my-2 relative">
+            <Link
+              to="/"
+              className="my-6 text-white font-semibold rounded-full bg-gray-600 flex items-center justify-center p-1 w-fit absolute top-0 left-0"
+            >
+              <IoMdArrowBack className="inline text-xl " />
+            </Link>
             <div className="my-1">
-              <img src={Logo} alt="" className="h-[74px] w-[74px] mx-auto  " />
+              <img src={Logo} alt="" className="h-[74px] w-[74px] mx-auto" />
             </div>
             <div className="flex flex-col justify-center items-center mb-6">
               <h2 className="text-[1.2rem] font-semibold">Welcome Back</h2>
@@ -84,7 +84,7 @@ const Login = () => {
             </Link>
             <button
               type="submit"
-              className="bg-black text-gray-200 rounded-md w-full py-3 h-[48px] border"
+              className="bg-gray-800 text-gray-200 rounded-md w-full py-3 h-[48px] border"
             >
               Login
             </button>
@@ -95,10 +95,9 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="bg-gray-100  rounded-md w-full py-3 h-[48px] border"
+              className="bg-gray-200 rounded-md w-full py-3 h-[48px] border"
             >
               <img src={Google} alt="" className="h-6 w-6 inline" />{" "}
-              <span className="uppercase ms-2 text-sm">Login via google</span>
             </button>
           </form>
           <h4 className="my-4 text-center text-sm">
