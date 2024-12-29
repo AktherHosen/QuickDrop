@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import AnimatedCursor from "react-animated-cursor";
 import Login from "./pages/Auth/Login.jsx";
 import Registration from "./pages/Auth/Registration.jsx";
+import AuthProvider from "./provider/AuthProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -34,13 +35,15 @@ createRoot(document.getElementById("root")).render(
         ]}
       /> */}
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />}>
-            <Route index element={<Home />} />
-          </Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/registration" element={<Registration />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Main />}>
+              <Route index element={<Home />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </HelmetProvider>
   </StrictMode>

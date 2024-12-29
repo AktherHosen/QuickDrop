@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import { FiUpload } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
+import { Helmet } from "react-helmet-async";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -29,6 +30,11 @@ const Registration = () => {
   };
 
   return (
+
+  <>
+      <Helmet>
+            <title>Registration | QuickDrop</title>
+          </Helmet>
     <section className="max-w-[1240px] h-[100vh] flex items-center justify-center mx-auto px-6 sm:px-5 lg:px-4 ">
       <div className="border rounded-md shadow-xs w-[450px] mx-auto ">
         <div className="px-4">
@@ -117,7 +123,7 @@ const Registration = () => {
 
             <button
               type="submit"
-              className="bg-black text-gray-200 rounded-md w-full py-3 h-[48px] border"
+              className="bg-gray-800 text-gray-200 rounded-md w-full py-3 h-[48px] border"
             >
               Register
             </button>
@@ -134,6 +140,7 @@ const Registration = () => {
         </div>
       </div>
     </section>
+  </>
   );
 };
 
