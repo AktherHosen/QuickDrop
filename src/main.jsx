@@ -12,7 +12,7 @@ import Registration from "./pages/Auth/Registration.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <HelmetProvider>
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={8}
         outerSize={8}
         color="193, 11, 111"
@@ -32,7 +32,7 @@ createRoot(document.getElementById("root")).render(
           "button",
           ".link",
         ]}
-      />
+      /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}>
