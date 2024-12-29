@@ -29,7 +29,7 @@ const Registration = () => {
   };
 
   return (
-    <section className="max-w-[1240px] h-screen flex items-center justify-center mx-auto px-6 sm:px-5 lg:px-4">
+    <section className="max-w-[1240px] flex items-center justify-center mx-auto px-6 sm:px-5 lg:px-4 mt-4">
       <div className="border rounded-md shadow-xs w-[450px] mx-auto ">
         <div className="px-4">
           <div className="my-1">
