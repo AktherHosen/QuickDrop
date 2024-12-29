@@ -11,15 +11,23 @@ const Login = () => {
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const userInfo = { email, password };
+    console.log(userInfo);
+  };
   return (
-    <section className="max-w-[1240px] h-screen  mx-auto px-6 sm:px-5 lg:px-4">
+    <section className="max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4">
       <Link
         to="/"
         className="my-6 text-white font-semibold rounded-full bg-black flex items-center justify-center p-2 w-fit"
       >
         <IoMdArrowBack className="inline text-xl " />
       </Link>
-      <div className="border rounded-md shadow-xs w-[450px] mx-auto ">
+      <div className="border rounded-md shadow-xs max-w-[450px]  mx-auto ">
         <div className="px-4">
           <div className="my-2">
             <div className="my-1">
@@ -39,6 +47,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="hello@quickdrop.com"
                 className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
@@ -51,6 +60,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="********"
+                  name="password"
                   className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent block"
                 />
                 <div

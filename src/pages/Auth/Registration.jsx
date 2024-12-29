@@ -11,20 +11,21 @@ const Registration = () => {
     setShowPassword(!showPassword);
   };
 
-  const [imageLink, setImageLink] = useState("");
-
-  const handleUploadImageClick = () => {
-    document.getElementById("image").click();
-  };
-
-  const handleFileChange = (e) => {
+  const handleRegistration = async (e) => {
     e.preventDefault();
-    const file = event.target.files[0];
-    if (file) {
-      const imageURL = URL.createObjectURL(file);
-      console.log(imageURL);
-      setImageLink(imageURL);
-    }
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = "";
+    const userType = form.userType.value;
+
+    const userInfo = {
+      name,
+      email,
+      photo,
+      userType,
+    };
+    console.log(userInfo);
   };
 
   return (
@@ -39,13 +40,15 @@ const Registration = () => {
               Create Account
             </h2>
           </div>
-          <form className="flex flex-col gap-y-4">
+          <form onSubmit={handleRegistration} className="flex flex-col gap-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium">
+              <label htmlFor="name" className="block text-sm font-medium">
                 Name
               </label>
               <input
                 type="name"
+                name="name"
+                id="name"
                 placeholder="quickdrop"
                 className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
@@ -56,43 +59,24 @@ const Registration = () => {
               </label>
               <input
                 type="email"
+                name="email"
+                id="email"
                 placeholder="hello@quickdrop.com"
                 className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-1">
-                Profile
+              <label htmlFor="profilePhoto" className="text-sm">
+                Upload Photo
               </label>
               <input
                 type="file"
-                name="image"
-                id="image"
-                className="hidden"
-                onChange={handleFileChange}
+                name="profilePhoto"
+                id="profilePhoto"
+                accept="image/*"
+                className="file-input file-input-bordered file-input-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent  ps-2 py-3 border rounded-md w-full mt-1"
               />
-              {imageLink === "" ? (
-                <div
-                  className="w-full flex items-center justify-center gap-x-2 border-[#e5eaf2] border rounded-md py-3 cursor-pointer"
-                  onClick={handleUploadImageClick}
-                >
-                  <FiUpload className="text-[1.1rem] text-[#777777]" />
-                  <p className="text-[#777777]">Browse to upload you picture</p>
-                </div>
-              ) : (
-                <div className="relative w-full">
-                  <img
-                    src={imageLink}
-                    alt="image"
-                    className="w-[50px] h-[50px] object-cover"
-                  />
-                  <MdDelete
-                    className="text-[1.4rem] text-white bg-[#000000ad] p-1 absolute top-0 left-16 cursor-pointer"
-                    onClick={() => setImageLink("")}
-                  />
-                </div>
-              )}
             </div>
             <div>
               <label htmlFor="userType" className="block text-sm font-medium">
@@ -115,17 +99,17 @@ const Registration = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="********"
-                  name="password1"
+                  name="password"
                   className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent block"
                 />
                 <div
-                  className="absolute right-4 top-[28%] cursor-pointer"
+                  className="absolute right-3 top-[28%] cursor-pointer"
                   onClick={togglePassword}
                 >
                   {showPassword ? (
-                    <IoMdEye className="text-2xl" />
+                    <IoMdEye className="text-xl" />
                   ) : (
-                    <IoMdEyeOff className="text-2xl" />
+                    <IoMdEyeOff className="text-xl" />
                   )}
                 </div>
               </div>
