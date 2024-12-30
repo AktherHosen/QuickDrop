@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import Google from "../../assets/images/google.png";
 import { Helmet } from "react-helmet-async";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
+  const { signInWithGoogle } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -20,6 +22,15 @@ const Login = () => {
     const userInfo = { email, password };
     console.log(userInfo);
   };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+    } catch (err) {
+      console.log(err?.message);
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -45,7 +56,7 @@ const Login = () => {
                 </p>
               </div>
             </div>
-            <form className="flex flex-col gap-y-4">
+            <form onSubmit={handleLogin} className="flex flex-col gap-y-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium">
                   Email
@@ -93,21 +104,22 @@ const Login = () => {
               >
                 Login
               </button>
-              <div className="flex items-center my-2">
-                <hr className="flex-grow border-t border-gray-400" />
-                <span className="px-4 text-gray-500">or</span>
-                <hr className="flex-grow border-t border-gray-400" />
-              </div>
-              <button
-                type="submit"
-                className="bg-trasparent rounded-md w-full py-3 h-[48px] border border-gray-800 shadow-none"
-              >
-                <img src={Google} alt="" className="h-6 w-6 inline" />{" "}
-                <span className="uppercase ms-2 text-normal text-sm text-gray-800">
-                  Sign in via google
-                </span>
-              </button>
             </form>
+            <div className="flex items-center my-2">
+              <hr className="flex-grow border-t border-gray-400" />
+              <span className="px-4 text-gray-500">or</span>
+              <hr className="flex-grow border-t border-gray-400" />
+            </div>
+            <button
+              type="submit"
+              onClick={handleGoogleSignIn}
+              className="bg-trasparent rounded-md w-full py-3 h-[48px] border border-gray-800 shadow-none"
+            >
+              <img src={Google} alt="" className="h-6 w-6 inline" />{" "}
+              <span className="uppercase ms-2 text-normal text-sm text-gray-800">
+                Sign in via google
+              </span>
+            </button>
             <h4 className="my-4 text-center text-sm">
               Don't have an account?{" "}
               <Link
