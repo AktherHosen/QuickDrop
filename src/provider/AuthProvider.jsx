@@ -20,6 +20,20 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const createUser = (email, password) => {
+    setLoading(true)
+    return createUserWithEmailAndPassword(auth, email, password)
+  }
+
+  const logOut = async () => {
+    setLoading(true);
+    return await signOut(auth)
+  }
+
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+
   const signInWithGoogle = () => {
     setLoading(true);
     signInWithPopup(auth, googleProvider);
@@ -27,6 +41,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     signInWithGoogle,
+    signIn, createUser, logOut
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
