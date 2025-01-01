@@ -21,27 +21,46 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
-    setLoading(true)
-    return createUserWithEmailAndPassword(auth, email, password)
-  }
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
   const logOut = async () => {
     setLoading(true);
-    return await signOut(auth)
-  }
+    try {
+      await signOut(auth);
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const signIn = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password)
-  }
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const signInWithGoogle = () => {
     setLoading(true);
     signInWithPopup(auth, googleProvider);
   };
 
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        setLoading(true);
+        setUser(currentUser);
+      }
+    });
+    return () => unSubscribe;
+  }, []);
+
   const authInfo = {
+    user,
+    loading,
     signInWithGoogle,
-    signIn, createUser, logOut
+    signIn,
+    createUser,
+    logOut,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

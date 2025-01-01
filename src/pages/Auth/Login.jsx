@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { IoMdArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import Google from "../../assets/images/google.png";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, user } = useAuth();
+  console.log(user);
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -26,6 +28,7 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle();
+      navigate("/");
     } catch (err) {
       console.log(err?.message);
     }
