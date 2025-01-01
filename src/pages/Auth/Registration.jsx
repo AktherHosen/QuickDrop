@@ -5,6 +5,7 @@ import Logo from "../../assets/images/logo.png";
 import { imageUpload } from "../../api/utils";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,6 +17,8 @@ const Registration = () => {
   const location = useLocation();
   const from = location?.state || "/";
   const navigate = useNavigate();
+
+  // Registration
   const handleRegistration = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -25,23 +28,39 @@ const Registration = () => {
     const userType = form.userType.value;
     const password = form.password.value;
 
+    let image_url = "";
+    if (profilePhoto) {
+      // Only upload the image if a file is provided
+      try {
+        image_url = await imageUpload(profilePhoto);
+      } catch (err) {
+        console.error("Image upload failed:", err.message);
+        toast.error("Failed to upload profile photo.");
+        return;
+      }
+    }
+
     const userInfo = {
       name,
       email,
-      profilePhoto,
+      profilePhoto: image_url,
       userType,
     };
-    // console.log(userInfo);
+
     try {
       setLoading(true);
-      const image_url = await imageUpload(profilePhoto);
-      // sign up
+
+      // Sign up
       const result = await createUser(email, password);
-      // update profile
+      // Update profile
       await updateUserProfile(name, image_url);
+      toast.success("Registration successful");
       navigate(from);
     } catch (err) {
-      console.log(err);
+      toast.error(err?.message || "Registration failed");
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 

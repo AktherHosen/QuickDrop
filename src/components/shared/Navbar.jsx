@@ -51,13 +51,27 @@ const Navbar = () => {
               <li
                 className={`hidden lg:flex border-l-2 border-black h-4 items-center hover:underline hover:underline-offset-4 transition-all duration-300`}
               >
-                <Link
-                  to="/login"
-                  onClick={user && (() => logOut())}
-                  className={`pl-2 ${user ? "text-red-600 font-medium" : ""}`}
-                >
-                  {user ? "Logout" : "Login"}
-                </Link>
+                {user ? (
+                  <>
+                    <Link
+                      onClick={() => logOut()}
+                      className="pl-2 
+                       text-red-600 font-medium"
+                    >
+                      Logout
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/login"
+                      className="pl-2 
+                         font-medium"
+                    >
+                      Login
+                    </Link>
+                  </>
+                )}
               </li>
 
               {/* Mobile Menu Toggle */}

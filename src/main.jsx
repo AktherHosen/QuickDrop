@@ -9,6 +9,7 @@ import AnimatedCursor from "react-animated-cursor";
 import Login from "./pages/Auth/Login.jsx";
 import Registration from "./pages/Auth/Registration.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -36,6 +37,7 @@ createRoot(document.getElementById("root")).render(
       /> */}
       <BrowserRouter>
         <AuthProvider>
+          <Toaster />
           <Routes>
             <Route path="/" element={<Main />}>
               <Route index element={<Home />} />

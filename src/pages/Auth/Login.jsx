@@ -7,9 +7,10 @@ import Logo from "../../assets/images/logo.png";
 import Google from "../../assets/images/google.png";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const { signInWithGoogle, user } = useAuth();
+  const { signInWithGoogle, user, signIn } = useAuth();
   console.log(user);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -21,8 +22,14 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const userInfo = { email, password };
-    console.log(userInfo);
+
+    try {
+      await signIn(email, password);
+      navigate("/");
+      toast.success("Logged in successfully");
+    } catch (err) {
+      toast.error(err?.message);
+    }
   };
 
   const handleGoogleSignIn = async () => {
