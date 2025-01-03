@@ -69,7 +69,7 @@ const Registration = () => {
       <Helmet>
         <title>Registration | QuickDrop</title>
       </Helmet>
-      <section className="max-w-[1240px] h-[100vh] flex items-center justify-center mx-auto px-6 sm:px-5 lg:px-4 ">
+      <section className="max-w-[1240px] h-[100vh] flex items-center justify-center mx-auto px-6 sm:px-5 lg:px-4">
         <div className="border rounded-md shadow-xs w-[450px] mx-auto ">
           <div className="px-4">
             <div className="my-1">
@@ -97,7 +97,7 @@ const Registration = () => {
                   name="name"
                   id="name"
                   placeholder="quickdrop"
-                  className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="ps-2 py-3 border-2 rounded-md w-full mt-1 focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent"
                 />
               </div>
               <div>
@@ -109,7 +109,7 @@ const Registration = () => {
                   name="email"
                   id="email"
                   placeholder="hello@quickdrop.com"
-                  className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent"
                 />
               </div>
 
@@ -122,7 +122,7 @@ const Registration = () => {
                   name="profilePhoto"
                   id="profilePhoto"
                   accept="image/*"
-                  className="file-input file-input-bordered file-input-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent  ps-2 py-3 border rounded-md w-full mt-1"
+                  className="file-input file-input-bordered file-input-md focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent  ps-2 py-3 border rounded-md w-full mt-1"
                 />
               </div>
               <div>
@@ -132,7 +132,7 @@ const Registration = () => {
                 <select
                   name="userType"
                   id="userType"
-                  className="select bg-gray-50 text-gray-700 py-3 px-4 border border-gray-300 rounded-md w-full mt-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:bg-gray-100 transition-colors"
+                  className="select bg-gray-50 text-gray-700 py-3 px-4 border border-gray-300 rounded-md w-full mt-1 shadow-sm focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent hover:bg-gray-100 transition-colors dark:text-darkText"
                 >
                   <option value="user">User</option>
                   <option value="deliveryMan">Delivery Man</option>
@@ -147,7 +147,7 @@ const Registration = () => {
                     type={showPassword ? "text" : "password"}
                     placeholder="********"
                     name="password"
-                    className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent block"
+                    className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 dark:bg-darkBg dark:text-darkText dark:border-gray-500 focus:border-transparent block"
                   />
                   <div
                     className="absolute right-3 top-[28%] cursor-pointer"
@@ -164,7 +164,7 @@ const Registration = () => {
 
               <button
                 type="submit"
-                className="bg-gray-800 text-gray-200 rounded-md w-full py-3 h-[48px] border"
+                className="bg-gray-800 text-darkText dark:bg-darkBg dark:text-darkText dark:border-gray-500 rounded-md w-full py-3 h-[48px] border"
               >
                 Register
               </button>
@@ -173,7 +173,7 @@ const Registration = () => {
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="text-[#1a32cb] hover:underline hover:underline-offset-2"
+                className="text-[#1a32cb] hover:underline hover:underline-offset-2 dark:text-darkText dark:underline dark:underline-offset-2 "
               >
                 Login
               </Link>

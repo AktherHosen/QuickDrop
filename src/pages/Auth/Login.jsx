@@ -62,12 +62,12 @@ const Login = () => {
         <title>Login | QuickDrop</title>
       </Helmet>
       <section className="max-w-[1240px] h-[100vh] flex justify-center items-center mx-auto px-6 sm:px-5 lg:px-4 ">
-        <div className="border rounded-md shadow-xs w-[450px]">
+        <div className="border-2 dark:border-gray-500 rounded-md shadow-xs w-[450px]">
           <div className="px-4 w-full">
             <div className="my-2 relative">
               <Link
                 to="/"
-                className="my-6 text-white font-semibold rounded-full bg-gray-600 flex items-center justify-center p-1 w-fit absolute top-0 left-0"
+                className="my-6 text-white font-semibold rounded-full bg-gray-600 dark:bg-primary flex items-center justify-center p-1 w-fit absolute top-0 left-0"
               >
                 <IoMdArrowBack className="inline text-xl " />
               </Link>
@@ -76,14 +76,17 @@ const Login = () => {
               </div>
               <div className="flex flex-col justify-center items-center mb-6">
                 <h2 className="text-[1.2rem] font-semibold">Welcome Back</h2>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-darkText text-sm">
                   Please enter your details to login
                 </p>
               </div>
             </div>
             <form onSubmit={handleLogin} className="flex flex-col gap-y-4">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -91,11 +94,14 @@ const Login = () => {
                   name="email"
                   onBlur={(e) => setEmail(e.target.value)}
                   placeholder="hello@quickdrop.com"
-                  className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2  focus:border-transparent dark:bg-darkBg dark:border-gray-500"
                 />
               </div>
               <div>
-                <label htmlFor="password" className="block text-sm font-medium">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium mb-2"
+                >
                   Password
                 </label>
                 <div className="relative">
@@ -103,7 +109,7 @@ const Login = () => {
                     type={showPassword ? "text" : "password"}
                     placeholder="********"
                     name="password"
-                    className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent block"
+                    className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent block"
                   />
                   <div
                     className="absolute right-4 top-[28%] cursor-pointer"
@@ -120,13 +126,13 @@ const Login = () => {
 
               <span
                 onClick={handleResetPassword}
-                className="text-[#1a32cb] text-sm hover:underline hover:underline-offset-2"
+                className="text-[#1a32cb] dark:text-darkText text-sm hover:underline hover:underline-offset-2 dark:underline dark:underline-offset-2"
               >
                 Forgot password?
               </span>
               <button
                 type="submit"
-                className="bg-gray-800 text-gray-100 rounded-md w-full py-3 h-[48px] border"
+                className="bg-gray-800 dark:border-gray-500 text-darkText rounded-md w-full py-3 h-[48px] border"
               >
                 Login
               </button>
@@ -139,10 +145,10 @@ const Login = () => {
             <button
               type="submit"
               onClick={handleGoogleSignIn}
-              className="bg-trasparent rounded-md w-full py-3 h-[48px] border border-gray-800 shadow-none"
+              className="bg-trasparent dark:border-gray-500 rounded-md w-full py-3 h-[48px] border border-gray-800 shadow-none"
             >
               <img src={Google} alt="" className="h-6 w-6 inline" />{" "}
-              <span className="uppercase ms-2 text-normal text-sm text-gray-800">
+              <span className="uppercase ms-2 dark:text-darkText text-normal text-sm text-gray-800">
                 Sign in via google
               </span>
             </button>
@@ -150,7 +156,7 @@ const Login = () => {
               Don't have an account?{" "}
               <Link
                 to="/registration"
-                className="text-[#1a32cb] hover:underline hover:underline-offset-2"
+                className="text-[#1a32cb] dark:text-darkText dark:underline  dark:underline-offset-2 hover:underline hover:underline-offset-2"
               >
                 Register
               </Link>
