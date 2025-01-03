@@ -13,6 +13,15 @@
 <body>
   <div id="root" class="dark:bg-darkBg dark:text-darkText dark:text-opacity-20"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    const theme = localStorage.getItem("theme") || "light";
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+
 </body>
 
 </html>
