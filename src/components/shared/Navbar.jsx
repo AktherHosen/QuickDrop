@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import defaultImg from "../../assets/images/default.png";
 import { TbLogout2, TbLogin2 } from "react-icons/tb";
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,10 +20,21 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
   return (
-    <div className="border-b border-gray-200 pb-2">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 mt-2.5">
+    <div className="border-b dark:border-none border-gray-200 pb-2 dark:bg-darkBg dark:text-white">
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 pt-2.5">
         <nav className="flex flex-col">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-1 ">
@@ -42,7 +55,7 @@ const Navbar = () => {
                 <a href="#">Dashboard</a>
               </li>
               <li className="hidden lg:flex py-2 hover:underline hover:underline-offset-4 transition-all duration-300  items-center ">
-                <IoNotificationsSharp className="text-xl hover:text-[#75a3e9] transition-all duration-300" />
+                <IoNotificationsSharp className="text-xl dark:text-white hover:text-[#75a3e9] transition-all duration-300" />
                 <a href="#" className="lg:hidden">
                   Notification
                 </a>
@@ -81,16 +94,25 @@ const Navbar = () => {
                     <img
                       src={user?.photoURL || defaultImg}
                       className="h-9 w-9 rounded-full"
-                      lazyload="true"
-                      onError={(e) => {
-                        e.target.src = { defaultImg };
-                      }}
-                      alt="User Profile"
+                      alt="Profile"
                     />
                   )}
                 </div>
 
-                <div className="lg:hidden w-[40px] bg-secondary bg-opacity-20 rounded-md shadow-sm border p-1 flex items-center justify-center cursor-pointer">
+                <div>
+                  <button
+                    onClick={toggleTheme}
+                    className="p-1 text-sm rounded  dark:bg-gray-800 dark:text-gray-100"
+                  >
+                    {theme === "dark" ? (
+                      <MdDarkMode className="text-[28px]" />
+                    ) : (
+                      <MdLightMode className="text-[28px]" />
+                    )}
+                  </button>
+                </div>
+
+                <div className="lg:hidden w-[40px] bg-secondary bg-opacity-20 rounded-md shadow-sm border dark:border-none p-1 flex items-center justify-center cursor-pointer">
                   <span onClick={toggleMenu}>
                     {isMenuOpen ? (
                       <IoCloseSharp className="text-[28px]" />
@@ -110,7 +132,7 @@ const Navbar = () => {
               isMenuOpen ? "max-h-[200px]" : "max-h-0"
             }`}
           >
-            <ul className="mt-4 flex flex-col gap-2 text-start ps-4 rounded-md w-full bg-primary bg-opacity-15 text-black lg:hidden ">
+            <ul className="mt-4 flex flex-col gap-2 text-start ps-4 rounded-md w-full bg-primary bg-opacity-15 lg:hidden ">
               <li className="hover:underline hover:underline-offset-2 mt-3">
                 <a href="#" className="text-[14px] flex items-center gap-1">
                   <FaHome className="text-[14px]" />
