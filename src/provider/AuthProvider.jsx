@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import axios from "axios";
 
@@ -51,6 +52,11 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const resetPassword = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
+  };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -71,6 +77,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     setUser,
     updateUserProfile,
+    resetPassword,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -10,13 +10,15 @@ import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { signInWithGoogle, user, signIn } = useAuth();
-  console.log(user);
+  const { signInWithGoogle, user, signIn, setLoading, resetPassword } =
+    useAuth();
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -38,6 +40,18 @@ const Login = () => {
       navigate("/");
     } catch (err) {
       console.log(err?.message);
+    }
+  };
+
+  const handleResetPassword = async (e) => {
+    if (!email) return toast.error("Please write your email first!");
+    try {
+      await resetPassword(email);
+      toast.success("Request success. Please check your email...");
+      setLoading(false);
+    } catch (err) {
+      toast.error(err.message);
+      setLoading(false);
     }
   };
 
@@ -74,6 +88,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
+                  onBlur={(e) => setEmail(e.target.value)}
                   placeholder="hello@quickdrop.com"
                   className="ps-2 py-3 border rounded-md w-full mt-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
@@ -102,12 +117,12 @@ const Login = () => {
                 </div>
               </div>
 
-              <Link
-                to="/forgot-password"
+              <span
+                onClick={handleResetPassword}
                 className="text-[#1a32cb] text-sm hover:underline hover:underline-offset-2"
               >
                 Forgot password?
-              </Link>
+              </span>
               <button
                 type="submit"
                 className="bg-gray-800 text-gray-100 rounded-md w-full py-3 h-[48px] border"
