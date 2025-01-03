@@ -62,7 +62,7 @@ const Login = () => {
         <title>Login | QuickDrop</title>
       </Helmet>
       <section className="max-w-[1240px] h-[100vh] flex justify-center items-center mx-auto px-6 sm:px-5 lg:px-4 ">
-        <div className="border-2 dark:border-gray-500 rounded-md shadow-xs w-[450px]">
+        <div className="border dark:border-gray-500 rounded-md shadow-xs w-[450px]">
           <div className="px-4 w-full">
             <div className="my-2 relative">
               <Link

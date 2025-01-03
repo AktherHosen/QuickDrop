@@ -70,7 +70,7 @@ const Registration = () => {
         <title>Registration | QuickDrop</title>
       </Helmet>
       <section className="max-w-[1240px] h-[100vh] flex items-center justify-center mx-auto px-6 sm:px-5 lg:px-4">
-        <div className="border rounded-md shadow-xs w-[450px] mx-auto ">
+        <div className="border dark:border-gray-500 rounded-md shadow-xs w-[450px] mx-auto ">
           <div className="px-4">
             <div className="my-1">
               <div>
