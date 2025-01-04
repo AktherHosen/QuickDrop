@@ -110,30 +110,39 @@ const Registration = () => {
                 />
               </div>
 
-              <div>
-                <label htmlFor="profilePhoto" className="text-sm">
-                  Upload Photo
-                </label>
-                <input
-                  type="file"
-                  name="profilePhoto"
-                  id="profilePhoto"
-                  accept="image/*"
-                  className="file-input file-input-bordered file-input-md focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent  ps-2 py-3 border rounded-md w-full mt-1"
-                />
-              </div>
-              <div>
-                <label htmlFor="userType" className="block text-sm font-medium">
-                  Type
-                </label>
-                <select
-                  name="userType"
-                  id="userType"
-                  className="select bg-gray-50 text-gray-700 py-3 px-4 border border-gray-300 rounded-md w-full mt-1 shadow-sm focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent hover:bg-gray-100 transition-colors dark:text-darkText"
-                >
-                  <option value="user">User</option>
-                  <option value="deliveryMan">Delivery Man</option>
-                </select>
+              <div className="flex items-center gap-4">
+                <div className="w-2/3">
+                  <label htmlFor="profilePhoto" className="text-sm">
+                    Profile Picture
+                  </label>
+                  <input
+                    type="file"
+                    name="profilePhoto"
+                    id="profilePhoto"
+                    accept="image/*"
+                    className="file-input file-input-bordered file-input-md focus:outline-none focus:ring-2 outline-none dark:bg-darkBg dark:border-gray-500 focus:border-transparent  ps-2 py-3 border rounded-md w-full mt-1"
+                  />
+                </div>
+                <div className="w-1/3">
+                  <label
+                    htmlFor="userType"
+                    className="block text-sm font-medium"
+                  >
+                    Type
+                  </label>
+                  <select
+                    name="userType"
+                    id="userType"
+                    className="select bg-gray-50 text-gray-700 ps-2 py-3.5 border border-gray-300 rounded-md w-full mt-1.5 shadow-sm focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent hover:bg-gray-100 transition-colors dark:text-darkText"
+                    defaultValue={"select"}
+                  >
+                    <option value="select" disabled>
+                      Select
+                    </option>
+                    <option value="user">User</option>
+                    <option value="deliveryMan">Delivery Man</option>
+                  </select>
+                </div>
               </div>
               <div>
                 <label htmlFor="password" className="block text-sm font-medium">
