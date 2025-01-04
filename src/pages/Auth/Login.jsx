@@ -132,7 +132,7 @@ const Login = () => {
               </span>
               <button
                 type="submit"
-                className="bg-gray-800 dark:border-gray-500 text-darkText rounded-md w-full py-3 h-[48px] border dark:bg-primary dark:text-darkText"
+                className="bg-gray-800  text-darkText rounded-md w-full py-3 h-[48px]  dark:bg-primary dark:text-darkText"
               >
                 Login
               </button>
