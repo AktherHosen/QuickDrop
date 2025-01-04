@@ -72,16 +72,13 @@ const Registration = () => {
       <section className="max-w-[1240px] h-[100vh] flex items-center justify-center mx-auto px-6 sm:px-5 lg:px-4">
         <div className="border dark:border-gray-500 rounded-md shadow-xs w-[450px] mx-auto ">
           <div className="px-4">
-            <div className="my-1">
+            <div className="mt-6">
               <div>
-                <img
-                  src={Logo}
-                  alt=""
-                  className="h-[74px] w-[74px] mx-auto  "
-                />
+                <img src={Logo} alt="" className="h-12 w-12 mx-auto" />
               </div>
+
               <h2 className="text-[1.2rem] font-semibold mx-auto text-center">
-                Create Account
+                Get Started
               </h2>
             </div>
             <form
@@ -164,7 +161,7 @@ const Registration = () => {
 
               <button
                 type="submit"
-                className="bg-gray-800 text-darkText dark:bg-darkBg dark:text-darkText dark:border-gray-500 rounded-md w-full py-3 h-[48px] border"
+                className="bg-gray-800 text-darkText  dark:border-gray-500 dark:bg-primary dark:text-darkText rounded-md w-full py-3 h-[48px] border"
               >
                 Register
               </button>

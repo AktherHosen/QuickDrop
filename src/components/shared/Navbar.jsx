@@ -33,12 +33,12 @@ const Navbar = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <div className="border-b dark:border-none border-gray-200 pb-2 dark:bg-darkBg dark:text-white">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 pt-2.5">
-        <nav className="flex flex-col">
+    <div className="border-b dark:border-none border-gray-200 dark:bg-darkBg dark:text-white">
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-4 lg:px-2 ">
+        <nav className="flex flex-col min-h-[50px] py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-1 ">
-              <img src={Logo} alt="Logo" className="h-14 w-14" />
+              <img src={Logo} alt="Logo" className="h-9 w-9" />
               <h1 className="font-pacifico text-lg hidden lg:flex tracking-wide ">
                 Quick Drop
               </h1>

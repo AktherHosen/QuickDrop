@@ -40,7 +40,7 @@ const DeliveryThings = () => {
             <span className="block text-sm lg:text-[1rem]">Document</span>
           </div>
         </div>
-        <div className="min-h-[150px] border dark:border-none border-gray-100 shadow-sm transition-all duration-300 rounded-md border-b-[3.2px] hover:ease-linear hover:border-b-primary px-6  py-2.5 flex justify-center flex-col items-center gap-4">
+        <div className="col-span-2 lg:col-span-1 min-h-[150px] border dark:border-none border-gray-100 shadow-sm transition-all duration-300 rounded-md border-b-[3.2px] hover:ease-linear hover:border-b-primary px-6  py-2.5 flex justify-center flex-col items-center gap-4">
           <PiDevicesLight className="text-[45px]  text-primary transition-colors duration-300" />
           <div className="space-y-2 text-center">
             <span className="block text-sm lg:text-[1rem]">Device</span>

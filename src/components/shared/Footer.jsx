@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="bg-black border-t dark:border-t-gray-500 dark:bg-darkBg dark:text-darkText bg-opacity-90 text-secondary ">
       <div className="min-h-[300px] max-w-[1240px]  mx-auto px-6 sm:px-5 lg:px-4 py-4">
         <div className="mt-4 flex items-center">
-          <img src={Logo} className="h-12 w-12 lg:h-14 lg:w-14" alt="" />
+          <img src={Logo} className="h-8 w-8 lg:h-10 lg:w-10" alt="" />
           <p className="font-pacifico tracking-wide text-lg">Quick Drop</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-start gap-4 pt-10 pb-6 border-b border-gray-100 border-opacity-30">

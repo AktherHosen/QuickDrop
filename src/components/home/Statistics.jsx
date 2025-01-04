@@ -26,7 +26,7 @@ const Statistics = () => {
                   className="text-4xl md:text-5xl font-bold"
                 />{" "}
                 <span className="text-3xl font-bold dark:text-darkText">+</span>
-                <span className="block text-sm lg:text-[1rem] font-semibold">
+                <span className="block dark:text-darkText text-sm lg:text-[1rem] font-semibold">
                   Booked
                 </span>
               </>
@@ -43,7 +43,7 @@ const Statistics = () => {
                   className="text-4xl md:text-5xl font-bold"
                 />
                 <span className="text-3xl font-bold dark:text-darkText">+</span>
-                <span className="block text-sm lg:text-[1rem] font-semibold">
+                <span className="block dark:text-darkText text-sm lg:text-[1rem] font-semibold">
                   Delivered
                 </span>
               </>
@@ -60,7 +60,7 @@ const Statistics = () => {
                   className="text-4xl md:text-5xl font-bold"
                 />
                 <span className="text-3xl font-bold dark:text-darkText">+</span>
-                <span className="block text-sm lg:text-[1rem] font-semibold">
+                <span className="block text-sm lg:text-[1rem] font-semibold dark:text-darkText">
                   Users
                 </span>
               </>

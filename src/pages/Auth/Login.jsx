@@ -71,8 +71,8 @@ const Login = () => {
               >
                 <IoMdArrowBack className="inline text-xl " />
               </Link>
-              <div className="my-1">
-                <img src={Logo} alt="" className="h-[74px] w-[74px] mx-auto" />
+              <div className="mt-6">
+                <img src={Logo} alt="" className="h-12 w-12 mx-auto" />
               </div>
               <div className="flex flex-col justify-center items-center mb-6">
                 <h2 className="text-[1.2rem] font-semibold">Welcome Back</h2>
@@ -132,7 +132,7 @@ const Login = () => {
               </span>
               <button
                 type="submit"
-                className="bg-gray-800 dark:border-gray-500 text-darkText rounded-md w-full py-3 h-[48px] border"
+                className="bg-gray-800 dark:border-gray-500 text-darkText rounded-md w-full py-3 h-[48px] border dark:bg-primary dark:text-darkText"
               >
                 Login
               </button>
