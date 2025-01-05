@@ -52,7 +52,7 @@ const Navbar = () => {
                 <a href="#">Home</a>
               </li>
               <li className="hidden lg:flex py-2 hover:underline hover:underline-offset-4 transition-all duration-300">
-                <a href="#">Dashboard</a>
+                <Link to="/dashboard">Dashboard</Link>
               </li>
               <li className="hidden lg:flex py-2 hover:underline hover:underline-offset-4 transition-all duration-300  items-center ">
                 <IoNotificationsSharp className="text-xl dark:text-white hover:text-[#75a3e9] transition-all duration-300" />

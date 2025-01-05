@@ -10,6 +10,7 @@ import Login from "./pages/Auth/Login.jsx";
 import Registration from "./pages/Auth/Registration.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
+import DashboardLayout from "./layout/DashboardLayout.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -44,6 +45,7 @@ createRoot(document.getElementById("root")).render(
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/registration" element={<Registration />} />
+            <Route path="/dashboard" element={<DashboardLayout />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>
