@@ -140,10 +140,13 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="hover:underline hover:underline-offset-2 ">
-                <a href="#" className="text-[14px] flex items-center gap-1">
+                <Link
+                  to="/dashboard"
+                  className="text-[14px] flex items-center gap-1"
+                >
                   <TbLayoutDashboardFilled className="text-[14px]" />
                   Dashboard
-                </a>
+                </Link>
               </li>
               <li className="hover:underline hover:underline-offset-2 ">
                 <a href="#" className="text-[14px] flex items-center gap-1">
