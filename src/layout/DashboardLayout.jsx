@@ -9,7 +9,7 @@ const DashboardLayout = () => {
   return (
     <div className="w-full h-screen flex flex-col">
       {/* Navbar */}
-      <div className="flex bg-darkText dark:bg-darkBg border border-black  justify-between py-4 px-6 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
+      <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between py-4 px-6 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
         <div
           className={`flex justify-between items-center gap-2 ${
             toggle ? "w-[55px]" : "w-[224px]"
@@ -31,7 +31,7 @@ const DashboardLayout = () => {
       <div className="flex flex-1 pt-[64px]">
         {/* Sidebar */}
         <div
-          className={`fixed border-r border-black shadow-sm bg-darkText dark:bg-darkBg h-full transition-all duration-300 ${
+          className={`fixed border-r-2 dark:border-r dark:border-r-black  bg-darkText dark:bg-darkBg h-full transition-all duration-300 ${
             toggle ? "w-[80px] px-2 pt-6" : "w-[250px] p-6"
           }`}
           style={{ top: "64px" }}
