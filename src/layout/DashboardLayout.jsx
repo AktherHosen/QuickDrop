@@ -7,7 +7,7 @@ const DashboardLayout = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full h-screen flex flex-col bg-darkText dark:bg-darkBg">
       {/* Navbar */}
       <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between py-4 px-6 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
         <div
