@@ -8,7 +8,7 @@ const DeliveryManMenu = ({ toggle }) => {
     <>
       <Menu
         label="delivery list"
-        address="statistics"
+        address="delivery-list"
         icon={RiFileListLine}
         toggle={toggle}
       />

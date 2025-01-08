@@ -10,7 +10,7 @@ const AdminMenu = ({ toggle }) => {
     <>
       <Menu
         label="statistics"
-        address="statistics"
+        address=""
         icon={MdOutlineInsertChart}
         toggle={toggle}
       />
