@@ -3,6 +3,9 @@ import AdminMenu from "./Menu/AdminMenu";
 import UserMenu from "./Menu/UserMenu";
 import DeliveryManMenu from "./Menu/DeliveryManMenu";
 import "./Sidebar.css";
+import Menu from "./Menu/Menu";
+import { TbLogout2 } from "react-icons/tb";
+
 const Sidebar = ({ toggle }) => {
   return (
     <div
@@ -12,10 +15,21 @@ const Sidebar = ({ toggle }) => {
       style={{ top: "34px" }}
     >
       {/* Container for menus with overflow-y-auto for scrolling */}
-      <div className="h-full overflow-y-auto sidebar-container px-2">
-        <AdminMenu toggle={toggle} />
-        <UserMenu toggle={toggle} />
-        <DeliveryManMenu toggle={toggle} />
+      <div className=" h-full overflow-y-auto sidebar-container px-2">
+        <div className="flex flex-col justify-between  min-h-[calc(100vh-64px)]">
+          <div>
+            <AdminMenu toggle={toggle} />
+            <UserMenu toggle={toggle} />
+          </div>
+          <div>
+            <Menu
+              label="Logout"
+              address="logout"
+              icon={TbLogout2}
+              toggle={toggle}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

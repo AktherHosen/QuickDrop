@@ -3,14 +3,14 @@ import Sidebar from "../components/dashboard/sidebar/Sidebar";
 import { Link, Outlet } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 import { IoCode } from "react-icons/io5";
-
+import { BsReverseLayoutSidebarInsetReverse } from "react-icons/bs";
 const DashboardLayout = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <div className="w-full h-screen flex flex-col bg-darkText dark:bg-darkBg">
       {/* Navbar */}
-      <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between py-4 px-7 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
+      <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between items-center py-4 px-7 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
         <div
           className={`flex justify-between items-center gap-2 ${
             toggle ? "w-[55px] justify-center" : "w-[224px]"
@@ -20,11 +20,11 @@ const DashboardLayout = () => {
             Quick Drop
           </Link>
           <span onClick={() => setToggle(!toggle)}>
-            <IoCode className="text-[22px]" />
+            <BsReverseLayoutSidebarInsetReverse className="text-[19px] ms-1" />
           </span>
         </div>
         <p>
-          <FiUser size={26} />
+          <FiUser className="text-[22px] " />
         </p>
       </div>
 

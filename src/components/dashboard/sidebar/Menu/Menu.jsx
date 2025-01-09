@@ -9,8 +9,10 @@ const Menu = ({ label, address, icon: Icon, toggle }) => {
       className={({ isActive }) =>
         ` flex items-center ${
           toggle ? "justify-center w-fit" : "w-[220px]"
-        }  px-4 py-2 my-5 transition-colors duration-300 transform hover:bg-gray-300 hover:text-gray-700 ${
-          isActive ? "bg-gray-300 text-gray-700" : "text-gray-600"
+        }  px-3 py-2 my-5 transition-colors duration-300 rounded-sm transform hover:bg-gray-300 hover:text-black ${
+          isActive
+            ? "bg-gray-200 bg-opacity-80 text-gray-700"
+            : "text-gray-500 dark:text-darkText"
         }`
       }
     >
