@@ -4,27 +4,39 @@ import { Link, Outlet } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 import { IoCode } from "react-icons/io5";
 import { BsReverseLayoutSidebarInsetReverse } from "react-icons/bs";
+import Menu from "../components/dashboard/sidebar/Menu/Menu";
+import DropDownMenu from "../components/dashboard/sidebar/Menu/DropDownMenu";
 const DashboardLayout = () => {
   const [toggle, setToggle] = useState(false);
-
+  const [dropdown, setDropdown] = useState(false);
   return (
     <div className="w-full h-screen flex flex-col bg-darkText dark:bg-darkBg">
       {/* Navbar */}
-      <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between items-center py-4 px-7 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
+      <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between items-center py-4 px-5 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
         <div
           className={`flex justify-between items-center gap-2 ${
-            toggle ? "w-[55px] justify-center" : "w-[224px]"
+            toggle ? "w-[50px] justify-center" : "w-[220px]"
           }  `}
         >
           <Link to="/" className={` ${toggle ? "hidden" : "flex"}`}>
             Quick Drop
           </Link>
           <span onClick={() => setToggle(!toggle)}>
-            <BsReverseLayoutSidebarInsetReverse className="text-[19px] ms-1" />
+            <BsReverseLayoutSidebarInsetReverse className="text-[19px]" />
           </span>
         </div>
-        <p>
-          <FiUser className="text-[22px] " />
+        <p className="relative">
+          <FiUser
+            className="text-[22px] hover:cursor-pointer hover:text-primary font-bold"
+            onClick={() => setDropdown(!dropdown)}
+          />
+          <div
+            className={`bg-darkText w-fit absolute right-4 top-10 ${
+              dropdown ? "block" : "hidden"
+            } p-2 rounded-md shadow-md`}
+          >
+            <DropDownMenu label="Profile" address="profile" icon={FiUser} />
+          </div>
         </p>
       </div>
 
@@ -36,7 +48,7 @@ const DashboardLayout = () => {
 
         <div
           className={`${
-            toggle ? "ml-[80px]" : "ml-[80px] md:ml-[120px] lg:ml-[250px]"
+            toggle ? "ml-[60px]" : "ml-[60px] md:ml-[100px] lg:ml-[220px]"
           } flex-1 overflow-y-auto  bg-darkText dark:bg-darkBg
            p-6 `}
           style={{ height: "calc(100vh - 64px)" }}

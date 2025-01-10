@@ -1,22 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Menu = ({ label, address, icon: Icon, toggle }) => {
+const DropDownMenu = ({ label, address, icon: Icon, toggle }) => {
   return (
     <NavLink
       to={address}
       end
       className={({ isActive }) =>
-        ` flex items-center ${
-          toggle ? "justify-center w-fit" : "w-[200px]"
-        }  px-3 py-2 my-5 transition-colors duration-300 rounded-sm transform hover:bg-gray-300 hover:text-black ${
+        ` flex items-center px-2 w-fit transition-colors duration-300 rounded-sm transform hover:bg-gray-300 hover:text-black ${
           isActive
             ? "bg-gray-200 bg-opacity-80 text-gray-700"
             : "text-gray-500 dark:text-darkText"
         }`
       }
     >
-      <Icon className="w-5 h-5" />
+      <Icon className="w-4 h-4" />
 
       <span className={`font-medium ${toggle ? "hidden" : " block"} ml-2`}>
         {label}
@@ -25,4 +23,4 @@ const Menu = ({ label, address, icon: Icon, toggle }) => {
   );
 };
 
-export default Menu;
+export default DropDownMenu;
