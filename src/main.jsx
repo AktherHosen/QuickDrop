@@ -12,6 +12,7 @@ import AuthProvider from "./provider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
 import DashboardLayout from "./layout/DashboardLayout.jsx";
 import Statistics from "./pages/Dashboard/Statistics.jsx";
+import User from "./pages/Dashboard/User.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -48,6 +49,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/registration" element={<Registration />} />
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<Statistics />} />
+              <Route path="/dashboard/user" element={<User />} />
             </Route>
           </Routes>
         </AuthProvider>

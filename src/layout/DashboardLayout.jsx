@@ -15,7 +15,7 @@ const DashboardLayout = () => {
       <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between items-center py-4 px-5 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
         <div
           className={`flex justify-between items-center gap-2 ${
-            toggle ? "w-[50px] justify-center" : "w-[220px]"
+            toggle ? "w-[50px] justify-center" : "w-[200px]"
           }  `}
         >
           <Link to="/" className={` ${toggle ? "hidden" : "flex"}`}>
@@ -31,7 +31,7 @@ const DashboardLayout = () => {
             onClick={() => setDropdown(!dropdown)}
           />
           <div
-            className={`bg-darkText w-fit absolute right-4 top-10 ${
+            className={`bg-darkText dark:bg-darkBg w-fit absolute right-0 top-11 ${
               dropdown ? "block" : "hidden"
             } p-2 rounded-md shadow-md`}
           >
@@ -48,9 +48,9 @@ const DashboardLayout = () => {
 
         <div
           className={`${
-            toggle ? "ml-[60px]" : "ml-[60px] md:ml-[100px] lg:ml-[220px]"
+            toggle ? "ml-[60px]" : "ml-[60px] md:ml-[100px] lg:ml-[200px]"
           } flex-1 overflow-y-auto  bg-darkText dark:bg-darkBg
-           p-6 `}
+           p-4 `}
           style={{ height: "calc(100vh - 64px)" }}
         >
           <Outlet />

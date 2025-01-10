@@ -10,7 +10,7 @@ const Sidebar = ({ toggle }) => {
   return (
     <div
       className={`fixed border-r-2 dark:border-r dark:border-r-black bg-darkText dark:bg-darkBg h-full transition-all overscroll-y-scroll duration-300 ${
-        toggle ? "w-[60px]  pt-6" : "w-[220px]  pt-6"
+        toggle ? "w-[60px]  pt-6" : "w-[200px]  pt-6"
       }`}
       style={{ top: "34px" }}
     >

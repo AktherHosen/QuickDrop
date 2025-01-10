@@ -7,7 +7,7 @@ const DropDownMenu = ({ label, address, icon: Icon, toggle }) => {
       to={address}
       end
       className={({ isActive }) =>
-        ` flex items-center px-2 w-fit transition-colors duration-300 rounded-sm transform hover:bg-gray-300 hover:text-black ${
+        ` flex items-center px-2 w-fit transition-colors duration-300 rounded-sm transform dark:hover:bg-gray-700 dark:bg-opacity-80 hover:text-gray-700  ${
           isActive
             ? "bg-gray-200 bg-opacity-80 text-gray-700"
             : "text-gray-500 dark:text-darkText"
