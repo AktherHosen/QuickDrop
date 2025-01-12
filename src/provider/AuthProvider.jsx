@@ -11,7 +11,6 @@ import {
   GoogleAuthProvider,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import axios from "axios";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -59,10 +58,12 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      setUser(currentUser);
       if (currentUser) {
         setLoading(true);
-        setUser(currentUser);
+        saveUser(currentUser);
       }
+      setLoading(false);
     });
     return () => unSubscribe;
   }, []);

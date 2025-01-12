@@ -6,13 +6,14 @@ import { imageUpload } from "../../api/utils";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
-  const { loading, setLoading, createUser, setUser, updateUserProfile } =
+  const { loading, setLoading, createUser, saveUser, updateUserProfile } =
     useAuth();
   const location = useLocation();
   const from = location?.state || "/";
@@ -25,7 +26,7 @@ const Registration = () => {
     const name = form.name.value;
     const email = form.email.value;
     const profilePhoto = form.profilePhoto.files[0];
-    const userType = form.userType.value;
+    const role = form.role.value;
     const password = form.password.value;
 
     let image_url = "";
@@ -41,10 +42,9 @@ const Registration = () => {
     }
 
     const userInfo = {
-      name,
       email,
-      profilePhoto: image_url,
-      userType,
+      role,
+      status: "Verified",
     };
 
     try {
@@ -55,6 +55,14 @@ const Registration = () => {
       // Update profile
       await updateUserProfile(name, image_url);
       toast.success("Registration successful");
+      // Save user info
+      try {
+        await axios.put(`${import.meta.env.VITE_API_URL}/user`, userInfo);
+      } catch (err) {
+        toast.error("Failed to save user details.");
+        console.error(err);
+      }
+
       navigate(from);
     } catch (err) {
       toast.error(err?.message || "Registration failed");
@@ -123,12 +131,12 @@ const Registration = () => {
                 />
               </div>
               <div>
-                <label htmlFor="userType" className="block text-sm font-medium">
+                <label htmlFor="role" className="block text-sm font-medium">
                   Type
                 </label>
                 <select
-                  name="userType"
-                  id="userType"
+                  name="role"
+                  id="role"
                   className="select bg-gray-50 text-gray-700 ps-2 py-3 border border-gray-300 rounded-md w-full mt-1.5 shadow-sm focus:outline-none focus:ring-2 dark:bg-darkBg dark:border-gray-500 focus:border-transparent hover:bg-gray-100 transition-colors dark:text-darkText"
                   defaultValue={"select"}
                 >
