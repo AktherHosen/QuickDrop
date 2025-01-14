@@ -105,9 +105,9 @@ const Navbar = () => {
                     className="p-1 text-sm rounded  dark:bg-gray-800 dark:text-gray-100"
                   >
                     {theme === "dark" ? (
-                      <MdDarkMode className="text-[28px]" />
+                      <MdDarkMode className="text-[24px]" />
                     ) : (
-                      <MdLightMode className="text-[28px]" />
+                      <MdLightMode className="text-[24px]" />
                     )}
                   </button>
                 </div>
