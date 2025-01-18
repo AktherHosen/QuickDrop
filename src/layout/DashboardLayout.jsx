@@ -6,9 +6,11 @@ import { IoCode } from "react-icons/io5";
 import { BsReverseLayoutSidebarInsetReverse } from "react-icons/bs";
 import Menu from "../components/dashboard/sidebar/Menu/Menu";
 import DropDownMenu from "../components/dashboard/sidebar/Menu/DropDownMenu";
+import useAuth from "../hooks/useAuth";
 const DashboardLayout = () => {
   const [toggle, setToggle] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const { user } = useAuth();
   return (
     <div className="w-full h-screen flex flex-col bg-darkText dark:bg-darkBg">
       {/* Navbar */}
@@ -26,10 +28,19 @@ const DashboardLayout = () => {
           </span>
         </div>
         <p className="relative">
-          <FiUser
-            className="text-[22px] hover:cursor-pointer hover:text-primary font-bold"
-            onClick={() => setDropdown(!dropdown)}
-          />
+          {user ? (
+            <img
+              src={user?.photoURL}
+              className="h-9 w-9 rounded-full"
+              alt="Profile"
+              onClick={() => setDropdown(!dropdown)}
+            />
+          ) : (
+            <FiUser
+              className="text-[22px] hover:cursor-pointer hover:text-primary font-bold"
+              onClick={() => setDropdown(!dropdown)}
+            />
+          )}
           <div
             className={`bg-darkText dark:bg-darkBg w-fit absolute right-0 top-11 ${
               dropdown ? "block" : "hidden"

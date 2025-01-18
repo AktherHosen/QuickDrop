@@ -8,6 +8,7 @@ import Google from "../../assets/images/google.png";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const Login = () => {
   const { signInWithGoogle, user, signIn, setLoading, resetPassword } =
@@ -37,10 +38,40 @@ const Login = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle();
+      const result = await signInWithGoogle();
+      const user = result.user;
+
+      let existingUser;
+      try {
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/user/${user.email}`
+        );
+        existingUser = res.data;
+      } catch (err) {
+        if (err.response?.status === 404) {
+          existingUser = null;
+        } else {
+          throw err;
+        }
+      }
+
+      if (!existingUser) {
+        const newUserInfo = {
+          email: user.email,
+          name: user.displayName,
+          profilePhoto: user.photoURL,
+          role: "User",
+          status: "Verified",
+        };
+
+        await axios.put(`${import.meta.env.VITE_API_URL}/user`, newUserInfo);
+      }
+
       navigate("/");
+      toast.success("Logged in successfully");
     } catch (err) {
-      console.log(err?.message);
+      console.error("Google sign-in failed:", err?.message);
+      toast.error("Google sign-in failed. Please try again.");
     }
   };
 

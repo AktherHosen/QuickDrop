@@ -93,7 +93,7 @@ const Navbar = () => {
                   {user && (
                     <img
                       src={user?.photoURL || defaultImg}
-                      className="h-9 w-9 rounded-full"
+                      className="h-8 w-8 rounded-full"
                       alt="Profile"
                     />
                   )}
@@ -159,14 +159,14 @@ const Navbar = () => {
                 {user ? (
                   <button
                     onClick={() => logOut()}
-                    className="text-[14px] bg-red-600 w-fit px-3  py-1.5 rounded-sm text-white flex items-center gap-1"
+                    className="text-[14px] bg-red-600 w-fit px-5  py-1.5 rounded-sm text-white flex items-center gap-1"
                   >
                     Logout <TbLogout2 className="text-[16px]" />
                   </button>
                 ) : (
                   <Link
                     to="/login"
-                    className="text-[14px] bg-primary w-fit px-3 py-1.5 rounded-sm text-white flex items-center gap-1"
+                    className="text-[14px] bg-primary w-fit px-5 py-1.5 rounded-sm text-white flex items-center gap-1"
                   >
                     Login <TbLogin2 className="text-[16px]" />
                   </Link>
