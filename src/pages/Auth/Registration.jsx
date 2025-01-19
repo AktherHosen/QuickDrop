@@ -7,9 +7,11 @@ import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import axios from "axios";
+import useRole from "../../hooks/useRole";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
+
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
