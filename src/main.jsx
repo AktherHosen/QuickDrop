@@ -14,6 +14,8 @@ import DashboardLayout from "./layout/DashboardLayout.jsx";
 import Statistics from "./pages/Dashboard/Statistics.jsx";
 import User from "./pages/Dashboard/User.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Profile from "./pages/Dashboard/common/Profile.jsx";
 
 const queryClient = new QueryClient();
 
@@ -51,9 +53,17 @@ createRoot(document.getElementById("root")).render(
               </Route>
               <Route path="/login" element={<Login />} />
               <Route path="/registration" element={<Registration />} />
-              <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <PrivateRoute>
+                    <DashboardLayout />
+                  </PrivateRoute>
+                }
+              >
                 <Route index element={<Statistics />} />
                 <Route path="/dashboard/user" element={<User />} />
+                <Route path="/dashboard/profile" element={<Profile />} />
               </Route>
             </Routes>
           </AuthProvider>

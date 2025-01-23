@@ -46,6 +46,7 @@ const Registration = () => {
     const userInfo = {
       email,
       role,
+      profilePhoto: image_url,
       status: "Verified",
     };
 

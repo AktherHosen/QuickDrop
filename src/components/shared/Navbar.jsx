@@ -51,9 +51,11 @@ const Navbar = () => {
               <li className="hidden lg:flex py-2 hover:underline hover:underline-offset-4 transition-all duration-300">
                 <a href="#">Home</a>
               </li>
-              <li className="hidden lg:flex py-2 hover:underline hover:underline-offset-4 transition-all duration-300">
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
+              {user && (
+                <li className="hidden lg:flex py-2 hover:underline hover:underline-offset-4 transition-all duration-300">
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+              )}
               <li className="hidden lg:flex py-2 hover:underline hover:underline-offset-4 transition-all duration-300  items-center ">
                 <IoNotificationsSharp className="text-xl dark:text-white hover:text-[#75a3e9] transition-all duration-300" />
                 <a href="#" className="lg:hidden">
@@ -139,15 +141,17 @@ const Navbar = () => {
                   Home
                 </a>
               </li>
-              <li className="hover:underline hover:underline-offset-2 ">
-                <Link
-                  to="/dashboard"
-                  className="text-[14px] flex items-center gap-1"
-                >
-                  <TbLayoutDashboardFilled className="text-[14px]" />
-                  Dashboard
-                </Link>
-              </li>
+              {user && (
+                <li className="hover:underline hover:underline-offset-2 ">
+                  <Link
+                    to="/dashboard"
+                    className="text-[14px] flex items-center gap-1"
+                  >
+                    <TbLayoutDashboardFilled className="text-[14px]" />
+                    Dashboard
+                  </Link>
+                </li>
+              )}
               <li className="hover:underline hover:underline-offset-2 ">
                 <a href="#" className="text-[14px] flex items-center gap-1">
                   <IoNotificationsSharp className="text-[14px]" />
@@ -159,7 +163,7 @@ const Navbar = () => {
                 {user ? (
                   <button
                     onClick={() => logOut()}
-                    className="text-[14px] bg-red-600 w-fit px-5  py-1.5 rounded-sm text-white flex items-center gap-1"
+                    className="text-[14px] bg-red-700 w-fit px-5  py-1.5 rounded-sm text-white flex items-center gap-1"
                   >
                     Logout <TbLogout2 className="text-[16px]" />
                   </button>

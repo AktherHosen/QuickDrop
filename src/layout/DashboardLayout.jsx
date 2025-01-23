@@ -61,7 +61,7 @@ const DashboardLayout = () => {
           className={`${
             toggle ? "ml-[60px]" : "ml-[60px] md:ml-[100px] lg:ml-[200px]"
           } flex-1 overflow-y-auto  bg-darkText dark:bg-darkBg
-           p-4 `}
+           px-6 py-4 `}
           style={{ height: "calc(100vh - 64px)" }}
         >
           <Outlet />
