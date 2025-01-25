@@ -20,7 +20,6 @@ const Sidebar = ({ toggle }) => {
     navigate("/");
   };
 
-  if (isLoading) return <LoadingSpinner />;
   return (
     <div
       className={`fixed border-r-2 dark:border-r dark:border-r-black bg-darkText dark:bg-darkBg h-full transition-all overscroll-y-scroll duration-300 ${
