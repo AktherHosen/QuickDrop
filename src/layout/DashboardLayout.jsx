@@ -14,11 +14,11 @@ const DashboardLayout = () => {
   return (
     <div className="w-full h-screen flex flex-col bg-darkText dark:bg-darkBg">
       {/* Navbar */}
-      <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between items-center py-4 px-5 fixed top-0 w-full h-[64px]  z-10 shadow-sm">
+      <div className="flex bg-darkText dark:border-black dark:bg-darkBg border-b justify-between items-center py-4 px-5 fixed top-0 w-full h-[64px] z-10 shadow-sm">
         <div
           className={`flex justify-between items-center gap-2 ${
             toggle ? "w-[50px] justify-center" : "w-[200px]"
-          }  `}
+          }`}
         >
           <Link to="/" className={` ${toggle ? "hidden" : "flex"}`}>
             Quick Drop
@@ -57,12 +57,11 @@ const DashboardLayout = () => {
           <Sidebar toggle={toggle} />
         </div>
 
+        {/* Scrollable Outlet Section */}
         <div
           className={`${
             toggle ? "ml-[60px]" : "ml-[60px] md:ml-[100px] lg:ml-[200px]"
-          } flex-1 bg-darkText dark:bg-darkBg
-           px-6 py-4 `}
-          style={{ height: "calc(100vh - 64px)" }}
+          } flex-1 bg-darkText dark:bg-darkBg px-6 py-4 overflow-auto h-[calc(100vh-64px)]`}
         >
           <Outlet />
         </div>
