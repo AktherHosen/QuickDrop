@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import moment from "moment";
 
 const User = () => {
   const [users, setUsers] = useState([]);
@@ -36,6 +37,81 @@ const User = () => {
 
             <div>
               <div class="inline-flex gap-x-2">
+                <button
+                  type="button"
+                  class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                  aria-controls="hs-custom-backdrop-modal"
+                  data-hs-overlay="#hs-custom-backdrop-modal"
+                >
+                  Open modal
+                </button>
+
+                <div
+                  id="hs-custom-backdrop-modal"
+                  class="hs-overlay hs-overlay-backdrop-open:bg-blue-950/90 hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none dark:hs-overlay-backdrop-open:bg-blue-950/90"
+                  role="dialog"
+                  tabindex="-1"
+                  aria-labelledby="hs-custom-backdrop-label"
+                >
+                  <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+                    <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                      <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+                        <h3
+                          id="hs-custom-backdrop-label"
+                          class="font-bold text-gray-800 dark:text-white"
+                        >
+                          Modal title
+                        </h3>
+                        <button
+                          type="button"
+                          class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+                          aria-label="Close"
+                          data-hs-overlay="#hs-custom-backdrop-modal"
+                        >
+                          <span class="sr-only">Close</span>
+                          <svg
+                            class="shrink-0 size-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M18 6 6 18"></path>
+                            <path d="m6 6 12 12"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="p-4 overflow-y-auto">
+                        <p class="mt-1 text-gray-800 dark:text-neutral-400">
+                          This is a wider card with supporting text below as a
+                          natural lead-in to additional content.
+                        </p>
+                      </div>
+                      <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
+                        <button
+                          type="button"
+                          class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                          data-hs-overlay="#hs-custom-backdrop-modal"
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="button"
+                          class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                        >
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <a
                   class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
                   href="#"
@@ -97,23 +173,7 @@ const User = () => {
                   <th scope="col" class="px-6 py-3 text-start">
                     <div class="flex items-center gap-x-2">
                       <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                        Position
-                      </span>
-                    </div>
-                  </th>
-
-                  <th scope="col" class="px-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
                         Status
-                      </span>
-                    </div>
-                  </th>
-
-                  <th scope="col" class="px-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                        Portfolio
                       </span>
                     </div>
                   </th>
@@ -131,101 +191,83 @@ const User = () => {
               </thead>
 
               <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
-                <tr>
-                  <td class="size-px whitespace-nowrap">
-                    <div class="ps-6 py-3">
-                      <label for="hs-at-with-checkboxes-11" class="flex">
-                        <input
-                          type="checkbox"
-                          class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-600 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                          id="hs-at-with-checkboxes-11"
-                        />
-                        <span class="sr-only">Checkbox</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap">
-                    <div class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
-                      <div class="flex items-center gap-x-3">
-                        <span class="inline-flex items-center justify-center size-[38px] rounded-full bg-white border border-gray-300 dark:bg-neutral-800 dark:border-neutral-700">
-                          <span class="font-medium text-sm text-gray-800 leading-none dark:text-neutral-200">
-                            I
+                {users.map((u) => (
+                  <tr>
+                    <td class="size-px whitespace-nowrap">
+                      <div class="ps-6 py-3">
+                        <label for="hs-at-with-checkboxes-11" class="flex">
+                          <input
+                            type="checkbox"
+                            class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-600 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                            id="hs-at-with-checkboxes-11"
+                          />
+                          <span class="sr-only">Checkbox</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td class="size-px whitespace-nowrap">
+                      <div class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
+                        <div class="flex items-center gap-x-3">
+                          <span class="inline-flex items-center justify-center size-[38px] rounded-full bg-white border border-gray-300 dark:bg-neutral-800 dark:border-neutral-700">
+                            <span class="font-medium text-sm text-gray-800 leading-none dark:text-neutral-200">
+                              <img
+                                src={u.profilePhoto}
+                                className="rounded-full h-8 w-8"
+                                alt=""
+                              />
+                            </span>
                           </span>
-                        </span>
-                        <div class="grow">
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
-                            Inna Ivy
-                          </span>
-                          <span class="block text-sm text-gray-500 dark:text-neutral-500">
-                            invy@site.com
-                          </span>
+                          <div class="grow">
+                            <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                              {u?.role}
+                            </span>
+                            <span class="block text-sm text-gray-500 dark:text-neutral-500">
+                              {u?.email}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td class="h-px w-72 whitespace-nowrap">
-                    <div class="px-6 py-3">
-                      <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
-                        Designer
-                      </span>
-                      <span class="block text-sm text-gray-500 dark:text-neutral-500">
-                        IT department
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap">
-                    <div class="px-6 py-3">
-                      <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
-                        <svg
-                          class="size-2.5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          viewBox="0 0 16 16"
+                    </td>
+
+                    <td class="size-px whitespace-nowrap">
+                      <div class="px-6 py-3">
+                        <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
+                          <svg
+                            class="size-2.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                          </svg>
+                          {u?.status}
+                        </span>
+                      </div>
+                    </td>
+
+                    <td class="size-px whitespace-nowrap">
+                      <div class="px-6 py-3">
+                        <span class="text-sm text-gray-500 dark:text-neutral-500">
+                          {moment(u?.timestamp).format(
+                            "MMMM DD, YYYY hh:mm:ss A"
+                          )}
+                        </span>
+                      </div>
+                    </td>
+                    <td class="size-px whitespace-nowrap">
+                      <div class="px-6 py-1.5">
+                        <a
+                          class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
+                          href="#"
                         >
-                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                        </svg>
-                        Active
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap">
-                    <div class="px-6 py-3">
-                      <div class="flex items-center gap-x-3">
-                        <span class="text-xs text-gray-500 dark:text-neutral-500">
-                          5/5
-                        </span>
-                        <div class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700">
-                          <div
-                            class="flex flex-col justify-center overflow-hidden bg-gray-800 dark:bg-neutral-200"
-                            role="progressbar"
-                            aria-valuenow="100"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
+                          Edit
+                        </a>
                       </div>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap">
-                    <div class="px-6 py-3">
-                      <span class="text-sm text-gray-500 dark:text-neutral-500">
-                        18 Dec, 15:20
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap">
-                    <div class="px-6 py-1.5">
-                      <a
-                        class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                        href="#"
-                      >
-                        Edit
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -234,7 +276,7 @@ const User = () => {
             <div>
               <p class="text-sm text-gray-600 dark:text-neutral-400">
                 <span class="font-semibold text-gray-800 dark:text-neutral-200">
-                  12
+                  {users.length}
                 </span>{" "}
                 results
               </p>
