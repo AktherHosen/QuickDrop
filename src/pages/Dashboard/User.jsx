@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import moment from "moment";
+import UserModal from "../../components/modal/UserModal";
 
 const User = () => {
   const [users, setUsers] = useState([]);
-
+  const [selectedUser, setSelectedUser] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -19,7 +21,11 @@ const User = () => {
     fetchUsers();
   }, []);
 
-  console.log(users);
+  // console.log(users);
+  const handleUpdateRole = (user) => {
+    setIsOpen(true);
+    setSelectedUser(user);
+  };
 
   return (
     <div>
@@ -37,88 +43,6 @@ const User = () => {
 
             <div>
               <div class="inline-flex gap-x-2">
-                <button
-                  type="button"
-                  class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                  aria-haspopup="dialog"
-                  aria-expanded="false"
-                  aria-controls="hs-custom-backdrop-modal"
-                  data-hs-overlay="#hs-custom-backdrop-modal"
-                >
-                  Open modal
-                </button>
-
-                <div
-                  id="hs-custom-backdrop-modal"
-                  class="hs-overlay hs-overlay-backdrop-open:bg-blue-950/90 hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none dark:hs-overlay-backdrop-open:bg-blue-950/90"
-                  role="dialog"
-                  tabindex="-1"
-                  aria-labelledby="hs-custom-backdrop-label"
-                >
-                  <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
-                    <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                      <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
-                        <h3
-                          id="hs-custom-backdrop-label"
-                          class="font-bold text-gray-800 dark:text-white"
-                        >
-                          Modal title
-                        </h3>
-                        <button
-                          type="button"
-                          class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
-                          aria-label="Close"
-                          data-hs-overlay="#hs-custom-backdrop-modal"
-                        >
-                          <span class="sr-only">Close</span>
-                          <svg
-                            class="shrink-0 size-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M18 6 6 18"></path>
-                            <path d="m6 6 12 12"></path>
-                          </svg>
-                        </button>
-                      </div>
-                      <div class="p-4 overflow-y-auto">
-                        <p class="mt-1 text-gray-800 dark:text-neutral-400">
-                          This is a wider card with supporting text below as a
-                          natural lead-in to additional content.
-                        </p>
-                      </div>
-                      <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
-                        <button
-                          type="button"
-                          class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                          data-hs-overlay="#hs-custom-backdrop-modal"
-                        >
-                          Close
-                        </button>
-                        <button
-                          type="button"
-                          class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                        >
-                          Save changes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a
-                  class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-                  href="#"
-                >
-                  View all
-                </a>
-
                 <a
                   class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                   href="#"
@@ -259,11 +183,17 @@ const User = () => {
                     <td class="size-px whitespace-nowrap">
                       <div class="px-6 py-1.5">
                         <a
-                          class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
+                          onClick={() => handleUpdateRole(u)}
+                          class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 focus:outline-none  font-medium dark:text-blue-500"
                           href="#"
                         >
-                          Edit
+                          Update
                         </a>
+                        <UserModal
+                          isOpen={isOpen}
+                          setIsOpen={setIsOpen}
+                          selectedUser={selectedUser}
+                        />
                       </div>
                     </td>
                   </tr>

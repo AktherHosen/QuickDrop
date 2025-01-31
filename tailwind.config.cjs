@@ -1,6 +1,7 @@
 module.exports = {
   content: [
     "node_modules/preline/dist/*.js",
+    // "node_modules/preline/dist/*.js",
     "./src/**/*.{html,js,jsx,ts,tsx}",
   ],
   darkMode: "class",
