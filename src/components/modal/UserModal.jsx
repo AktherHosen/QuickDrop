@@ -52,16 +52,18 @@ const UserModal = ({ setIsOpen, isOpen, modalHandler, selectedUser }) => {
             leaveTo="opacity-0 scale-95"
           >
             <DialogPanel className="max-w-lg space-y-4 border bg-white p-12">
-              <DialogTitle className="font-bold">
-                Deactivate account
-              </DialogTitle>
-              <Description>
-                This will permanently deactivate your account
-              </Description>
-              <Select options={options} value={selectedRole} />
+              <Description>Update Role</Description>
+              <div className="min-w-2xl">
+                <Select options={options} value={selectedRole} />
+              </div>
               <div className="flex gap-4">
                 <button onClick={() => setIsOpen(false)}>Cancel</button>
-                <button onClick={() => setIsOpen(false)}>Deactivate</button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="bg-green-700 text-white px-2 py-1.5 rounded-sm"
+                >
+                  Save
+                </button>
               </div>
             </DialogPanel>
           </Transition.Child>

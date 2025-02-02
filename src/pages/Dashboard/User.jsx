@@ -2,12 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import moment from "moment";
-import UserModal from "../../components/modal/UserModal";
+
+import Select from "react-select";
 
 const User = () => {
   const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -21,10 +21,34 @@ const User = () => {
     fetchUsers();
   }, []);
 
-  // console.log(users);
-  const handleUpdateRole = (user) => {
-    setIsOpen(true);
-    setSelectedUser(user);
+  const options = [
+    { value: "admin", label: "admin" },
+    { value: "deliveryman", label: "deliveryman" },
+    { value: "user", label: "user" },
+  ];
+
+  const handleRoleChange = async (user, selectedOption) => {
+    if (!selectedOption) {
+      console.error("Selected option is undefined");
+      return;
+    }
+
+    try {
+      const response = await axios.patch(
+        `${import.meta.env.VITE_API_URL}/user/${user._id}`,
+        { role: selectedOption.value },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+
+      console.log("Success:", response.data);
+    } catch (err) {
+      console.error("Error:", err.response?.data || err.message);
+    }
   };
 
   return (
@@ -68,8 +92,8 @@ const User = () => {
             </div>
           </div>
 
-          <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700 ">
+          <div className=" overflow-auto">
+            <table class="min-w-full divide-gray-200 dark:divide-neutral-700 ">
               <thead class="bg-gray-50 dark:bg-neutral-800">
                 <tr>
                   <th scope="col" class="ps-6 py-3 text-start">
@@ -180,19 +204,16 @@ const User = () => {
                         </span>
                       </div>
                     </td>
-                    <td class="size-px whitespace-nowrap">
-                      <div class="px-6 py-1.5">
-                        <a
-                          onClick={() => handleUpdateRole(u)}
-                          class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 focus:outline-none  font-medium dark:text-blue-500"
-                          href="#"
-                        >
-                          Update
-                        </a>
-                        <UserModal
-                          isOpen={isOpen}
-                          setIsOpen={setIsOpen}
-                          selectedUser={selectedUser}
+                    <td class="whitespace-nowrap flex justify-end ">
+                      <div class="px-6 py-1.5 w-[200px]">
+                        <Select
+                          options={options}
+                          defaultValue={options.find(
+                            (option) => option.value === u.role
+                          )}
+                          onChange={(selectedOption) =>
+                            handleRoleChange(u, selectedOption)
+                          }
                         />
                       </div>
                     </td>
